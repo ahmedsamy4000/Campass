@@ -2,7 +2,7 @@
     "programs": [
         {
             "programName":"Egyptian Odyssey: A Journey through Luxor and Aswan",
-            "programId": "1",
+            "id": "1",
             "countryName": "Egypt",
             "companyID": "1",
             "cities": ["Luxor", "Aswan"],
@@ -16,7 +16,7 @@
         },
         {
             "programName":"Cairo to Fayoum: Exploring Ancient Wonders and Natural Beauty",
-            "programId": "2",
+            "id": "2",
             "countryName": "Egypt",
             "companyID": "1",
             "cities": ["Cairo", "Fayoum"],
@@ -30,7 +30,7 @@
         },
         {
             "programName":"Mediterranean Marvels: Discovering Alexandria and the North Coast",
-            "programId": "3",
+            "id": "3",
             "countryName": "Egypt",
             "companyID": "2",
             "cities": ["Alexandria", "North Coast"],
@@ -44,7 +44,7 @@
         },
         {
             "programName":"Red Sea Retreat: Exploring Dahab, Hurghada, and Sharm El-Sheikh",
-            "programId": "4",
+            "id": "4",
             "countryName": "Egypt",
             "companyID": "3",
             "cities": ["Dahab", "Hurghada", "Sharm Al-Sheikh"],
@@ -58,7 +58,7 @@
         },
         {
             "programName":"Desert Majesty: Journey to Riyadh's Cultural Heart",
-            "programId": "5",
+            "id": "5",
             "countryName": "Saudi Arabia",
             "companyID": "2",
             "cities": ["Riyadh"],
@@ -72,7 +72,7 @@
         },
         {
             "programName":"Coastal Charms: Exploring Jeddah's Rich Heritage and Modern Vibes",
-            "programId": "6",
+            "id": "6",
             "countryName": "Saudi Arabia",
             "companyID": "2",
             "cities": ["Jeddah"],
@@ -86,7 +86,7 @@
         },
         {
             "programName":"Desert Dreams: Discovering the Tranquility of Hafawah",
-            "programId": "7",
+            "id": "7",
             "countryName": "Saudi Arabia",
             "companyID": "3",
             "cities": ["Medina"],
