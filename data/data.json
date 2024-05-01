@@ -1,6 +1,8 @@
 {
     "programs": [
         {
+            "programName":"Egyptian Odyssey: A Journey through Luxor and Aswan",
+            "programId": "1",
             "countryName": "Egypt",
             "companyID": "1",
             "cities": ["Luxor", "Aswan"],
@@ -9,13 +11,15 @@
             "budget": 5000,
             "date": "2024-5-10",
             "discount": "10",
-            "habitations": ["1", "2"],
+            "habitations": ["1"],
             "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/b3/07/25.jpg"
         },
         {
+            "programName":"Cairo to Fayoum: Exploring Ancient Wonders and Natural Beauty",
+            "programId": "2",
             "countryName": "Egypt",
             "companyID": "1",
-            "cities": ["Cairo", "Giza", "Fayoum"],
+            "cities": ["Cairo", "Fayoum"],
             "transportationType": "Bus",
             "duration": 5,
             "budget": 3200,
@@ -23,6 +27,76 @@
             "discount": "0",
             "habitations": ["1", "2"],
             "image": "https://reflectionstravel.net/images/tour/large/121-Day-excursion-to-Fayoum-Pyramids-from-Cairo-9611506358035.jpeg"
+        },
+        {
+            "programName":"Mediterranean Marvels: Discovering Alexandria and the North Coast",
+            "programId": "3",
+            "countryName": "Egypt",
+            "companyID": "2",
+            "cities": ["Alexandria", "North Coast"],
+            "transportationType": "Bus",
+            "duration": 7,
+            "budget": 7500,
+            "date": "2024-5-8",
+            "discount": "20",
+            "habitations": ["1", "3"],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg"
+        },
+        {
+            "programName":"Red Sea Retreat: Exploring Dahab, Hurghada, and Sharm El-Sheikh",
+            "programId": "4",
+            "countryName": "Egypt",
+            "companyID": "3",
+            "cities": ["Dahab", "Hurghada", "Sharm Al-Sheikh"],
+            "transportationType": "Bus",
+            "duration": 7,
+            "budget": 9000,
+            "date": "2024-5-15",
+            "discount": "5",
+            "habitations": ["1", "2", "3"],
+            "image": "https://media.cnn.com/api/v1/images/stellar/prod/200611101955-01-egypt-dahab.jpg?q=w_1600,h_900,x_0,y_0,c_fill"
+        },
+        {
+            "programName":"Desert Majesty: Journey to Riyadh's Cultural Heart",
+            "programId": "5",
+            "countryName": "Saudi Arabia",
+            "companyID": "2",
+            "cities": ["Riyadh"],
+            "transportationType": "Plane",
+            "duration": 5,
+            "budget": 15300,
+            "date": "2024-5-20",
+            "discount": "10",
+            "habitations": ["1", "2"],
+            "image": "https://thepublicflow.com/wp-content/uploads/2023/04/L.jpeg"
+        },
+        {
+            "programName":"Coastal Charms: Exploring Jeddah's Rich Heritage and Modern Vibes",
+            "programId": "6",
+            "countryName": "Saudi Arabia",
+            "companyID": "2",
+            "cities": ["Jeddah"],
+            "transportationType": "Plane",
+            "duration": 3,
+            "budget": 10100,
+            "date": "2024-5-9",
+            "discount": "12",
+            "habitations": ["1"],
+            "image": "https://images.locationscout.net/2020/03/the-read-sea-saudi-arabia-hrrc.jpg?h=1100&q=83"
+        },
+        {
+            "programName":"Desert Dreams: Discovering the Tranquility of Hafawah",
+            "programId": "7",
+            "countryName": "Saudi Arabia",
+            "companyID": "3",
+            "cities": ["Medina"],
+            "transportationType": "Plane",
+            "duration": 4,
+            "budget": 16000,
+            "date": "2024-5-25",
+            "discount": "15",
+            "habitations": ["1", "2"],
+            "image": "https://www.visitsaudi.com/content/dam/hafawah/hafawah-dallah.jpg"
         }
     ]
 }
