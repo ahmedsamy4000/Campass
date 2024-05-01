@@ -1,0 +1,28 @@
+{
+    "programs": [
+        {
+            "countryName": "Egypt",
+            "companyID": "1",
+            "cities": ["Luxor", "Aswan"],
+            "transportationType": "Train",
+            "duration": 3,
+            "budget": 5000,
+            "date": "2024-5-10",
+            "discount": "10",
+            "habitations": ["1", "2"],
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/b3/07/25.jpg"
+        },
+        {
+            "countryName": "Egypt",
+            "companyID": "1",
+            "cities": ["Cairo", "Giza", "Fayoum"],
+            "transportationType": "Bus",
+            "duration": 5,
+            "budget": 3200,
+            "date": "2024-5-15",
+            "discount": "0",
+            "habitations": ["1", "2"],
+            "image": "https://reflectionstravel.net/images/tour/large/121-Day-excursion-to-Fayoum-Pyramids-from-Cairo-9611506358035.jpeg"
+        }
+    ]
+}
