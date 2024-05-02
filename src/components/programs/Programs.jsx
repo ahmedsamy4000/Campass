@@ -18,7 +18,6 @@ const Programs = () => {
     return (
         <div>
             
-            <Image src="veronika-biro-uaUcpSVd5Z0-unsplash.jpg" fluid alt='desert' style={{}}/>
             {/* {programs.map((p) => <div key={p.id}>{p.programName}</div>)}  */}
         </div>
     );
