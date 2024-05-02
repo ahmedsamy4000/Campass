@@ -11,19 +11,12 @@ export const programsAction = createAsyncThunk("programs/getAll", async () => {
     }
 })
 
-function reducer(state, action){
-    if(state.programs === action.payload.programs){
-      return state.programs
-    }
-    return action.payload
-}
-
 const programSlice = createSlice({
     name: "programs",
     initialState: {programs: [], loading: false},
     extraReducers:(builder) => {
         builder.addCase(programsAction.fulfilled, (state, action) => {
-            state.programs = reducer(state, action)
+            state.programs = action.payload
         })
 
         builder.addCase(programsAction.pending, (state, action) => {
