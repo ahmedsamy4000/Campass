@@ -1,3 +1,4 @@
 {
-    "programsApi": "http://localhost:8000/programs"
+    "programsApi": "http://localhost:8000/programs",
+    "Feedbacks":"http://localhost:8000/feedbacks"
 }

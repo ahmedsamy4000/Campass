@@ -1,0 +1,38 @@
+#background{
+    height: 100vh;
+    background-image: url("../../../../public/contact.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+}
+#campasslabel{
+    font-size: 8rem;
+    color: wheat;
+}
+#touch{
+    font-size: 3rem;
+    color: white;
+}
+#description{
+    color: white;
+    font-size: 1rem;
+}
+
+
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotate {
+    animation: rotate 2s linear infinite; /* Change duration and timing function as needed */
+  }
