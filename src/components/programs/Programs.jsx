@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { programsAction } from '../../redux/slices/programsSlice';
 import SimpleBackdrop from '../spinner';
-import Image from 'react-bootstrap/Image';
+import classes from '../../styles/programStyle.module.css'
+import { Typography } from '@mui/material';
+import Program from './Program';
+import { Container, Row } from 'react-bootstrap';
 
 const Programs = () => {
     const programs = useSelector((state) => state.programs.programs);
@@ -17,8 +20,31 @@ const Programs = () => {
     if(programs.length === 0) return <SimpleBackdrop></SimpleBackdrop>
     return (
         <div>
-            
-            {/* {programs.map((p) => <div key={p.id}>{p.programName}</div>)}  */}
+            <div className={classes.ad}>
+                <div className={classes.discover}>
+                    <Typography variant="h2" gutterBottom  sx={{fontWeight:"bold"}}>
+                            Unwind in Nature's Embrace
+                    </Typography>
+                    <Typography variant="p" gutterBottom>
+                        Embark on an Adventure of Serenity and Exploration with Our Programs
+                    </Typography>
+                </div>
+            </div>
+            <div style={{textAlign:"left"}} className='mt-5 ms-5'>
+                <Typography variant="h4" gutterBottom>
+                    Discover our programs
+                </Typography>
+            </div>
+            <div>
+                <Container>
+                <Row>
+
+                {programs.map((m) => <Program key={m.id} {...m}></Program>)}
+            </Row>
+
+                </Container>
+    
+            </div>
         </div>
     );
 }

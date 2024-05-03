@@ -1,0 +1,17 @@
+.ad {
+    height: 60vh;
+    background-image: url("/public/two-tents-field-with-word-nike-t.jpg");
+    background-size: cover;
+    background-position:  25% 75%;
+    opacity: 0.9;
+}
+
+.discover {
+    color: white;
+    position: absolute;
+    left: 10%;
+    top: 12%;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+}
