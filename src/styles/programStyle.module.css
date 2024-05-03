@@ -15,3 +15,18 @@
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align items to the start (left) */
 }
+
+.programs {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; 
+    left: 10%;
+    top: 12%;
+}
+
+@media screen and (max-width: 600px) {
+    .programs {
+      display: grid;
+      place-items: center;
+    }
+  }

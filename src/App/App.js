@@ -15,8 +15,8 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <Provider  store={store}>
-        {/* <Programs></Programs> */}
-        <Contactpage></Contactpage>
+        <Programs></Programs>
+        {/* <Contactpage></Contactpage> */}
     </Provider>
   );
 }

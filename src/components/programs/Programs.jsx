@@ -5,7 +5,7 @@ import SimpleBackdrop from '../spinner';
 import classes from '../../styles/programStyle.module.css'
 import { Typography } from '@mui/material';
 import Program from './Program';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const Programs = () => {
     const programs = useSelector((state) => state.programs.programs);
@@ -14,36 +14,42 @@ const Programs = () => {
     useEffect(() => {
         dispatch(programsAction())
     }, [dispatch])
-    
+
     console.log(programs);
 
-    if(programs.length === 0) return <SimpleBackdrop></SimpleBackdrop>
+    if (programs.length === 0) return <SimpleBackdrop></SimpleBackdrop>
     return (
-        <div>
+        <div style={{ backgroundColor: "#F6F4E8" }}>
             <div className={classes.ad}>
                 <div className={classes.discover}>
-                    <Typography variant="h2" gutterBottom  sx={{fontWeight:"bold"}}>
-                            Unwind in Nature's Embrace
+                    <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>
+                        Unwind in Nature's Embrace
                     </Typography>
                     <Typography variant="p" gutterBottom>
                         Embark on an Adventure of Serenity and Exploration with Our Programs
                     </Typography>
                 </div>
             </div>
-            <div style={{textAlign:"left"}} className='mt-5 ms-5'>
-                <Typography variant="h4" gutterBottom>
-                    Discover our programs
-                </Typography>
-            </div>
             <div>
                 <Container>
-                <Row>
+                    <Row>
+                    <Col>
+                        <div className='position-relative'>
+                            <div style={{}} className={`mt-5 ms-5 ${classes.programs}`}>
+                                <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
+                                    Discover our programs
+                                </Typography>
+                            </div>
+                        </div>
+                        </Col>
+                    </Row>
+                    <Row>
 
-                {programs.map((m) => <Program key={m.id} {...m}></Program>)}
-            </Row>
+                        {programs.map((m) => <Program key={m.id} {...m}></Program>)}
+                    </Row>
 
                 </Container>
-    
+
             </div>
         </div>
     );
