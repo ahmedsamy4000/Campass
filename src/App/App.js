@@ -17,6 +17,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
 const LoginPage = lazy(() => import('../Pages/LoginPage.jsx'));
+const HabitationsPage=lazy(()=>import('./habitations/habitationsPage.jsx'))
 const RegisterPage = lazy(() => import('../Pages/RegisterPage.jsx'));
 const Home = lazy(()=>import('../Pages/Home.jsx'));
 const Header = lazy(()=>import('../components/Home/Header.jsx'))
@@ -35,6 +36,7 @@ function App() {
         {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
         {path:"/signin",element:<LoginPage/>,errorElement:<NotFound></NotFound>},
         {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
+        {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
         {path:"*",element:<Error></Error>}
       //]
     //}
