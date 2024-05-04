@@ -15,6 +15,7 @@ import NotFound from '../Pages/NotFound.jsx';
 import Error from '../Pages/Error.jsx';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from '../Pages/Home.jsx';
+import Header from '../components/Home/Header.jsx';
 
 function App() {
   const router=createBrowserRouter([
@@ -22,8 +23,9 @@ function App() {
       
       // path:"/",element:<Layout></Layout>,children:[
         // {index:true,element:<Home></Home> ,errorElement:<NotFound></NotFound>},
-        {path:"/",element:<Home></Home>,errorElement:<NotFound></NotFound>},
+        {path:"/",element:<Header></Header>,errorElement:<NotFound></NotFound>},
         {path:"/programs",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
+        {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
         {path:"*",element:<Error></Error>}
       //]
     //}
