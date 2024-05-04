@@ -1,5 +1,5 @@
 import React from 'react';
-import Intro from '../components/Home/Intro';
+import Intro from '../components/Home/intro';
 import { Grid } from '@mui/material';
 import RecentlyPrograms from '../components/Home/RecentlyPrograms';
 
