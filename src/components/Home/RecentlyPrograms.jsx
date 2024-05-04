@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { programsAction } from '../../redux/slices/programsSlice';
 import Program from '../programs/Program';
-import homeClass from '../../styles/Home.module.css';
+import homeClass from '../../Styles/Home.module.css';
 const RecentlyPrograms = () => {
     const programs = useSelector((state) => state.programs.programs);
     const dispatch = useDispatch();

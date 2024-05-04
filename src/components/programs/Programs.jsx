@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { programsAction } from '../../redux/slices/programsSlice';
 import SimpleBackdrop from '../spinner';
-import classes from '../../styles/programStyle.module.css'
+import classes from '../../Styles/programStyle.module.css'
 import { Typography } from '@mui/material';
 import Program from './Program';
 import { Col, Container, Row } from 'react-bootstrap';

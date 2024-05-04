@@ -1,5 +1,6 @@
 {
     "programsApi": "http://localhost:8000/programs",
     "Feedbacks":"http://localhost:8000/feedbacks",
-    "habitations":"http://localhost:8000/habitaions"
+    "habitations":"http://localhost:8000/habitaions",
+    "usersApi": "http://localhost:8000/users"
 }

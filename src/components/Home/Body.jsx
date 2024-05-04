@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../../styles/Header.module.css'
+import classes from '../../Styles/Header.module.css'
 
 
 const Body = () => {

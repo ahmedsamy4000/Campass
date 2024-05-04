@@ -1,5 +1,5 @@
 import React from 'react';
-import homeClass from '../../styles/Home.module.css';
+import homeClass from '../../Styles/Home.module.css';
 import { Grid, Typography } from '@mui/material';
 
 const Intro = () => {

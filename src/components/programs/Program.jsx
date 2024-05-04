@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from '../../styles/programCard.module.css'
-import { Card, Col } from 'react-bootstrap';
+import classes from '../../Styles/programCard.module.css'
+import { Col } from 'react-bootstrap';
 import { Typography } from '@mui/material';
 
 const Program = (program) => {

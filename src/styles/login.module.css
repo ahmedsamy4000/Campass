@@ -1,0 +1,99 @@
+.background {
+    height: 100vh;
+    background-image: url("../../public/Login2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: auto;
+}
+
+.form {
+    width: 50%;
+    display: block;
+    margin: auto;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+    /* backdrop-filter: blur(9px); */
+    /* -webkit-backdrop-filter: blur(9px); */
+}
+
+.sentence{
+    margin-left: 50px;
+}
+
+.textField{
+    width: 80%;
+    height: 100px;
+}
+
+.textField label {
+    color: #fff;
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.15s ease;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  .textField input {
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .btn {
+    display: block;
+    margin: 20px auto;
+    width: 40%;
+    height: 70px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 6px 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .btn:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+  }
+
+  .signSmall{
+    display: none;
+  }
+
+  @media (min-width: 200px) {
+    .form {
+        width: 90%;
+        font-size: 18px;
+    }
+    .signSmall{
+      display: block;
+    }
+    .signLarge{
+      display: none;
+    }
+}
+
+
+@media (min-width: 800px) {
+    .form {
+        width: 50%;
+        font-size: 16px;
+    }
+    .signSmall{
+      display: none;
+    }
+    .signLarge{
+      display: block;
+    }
+}
