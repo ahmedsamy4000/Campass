@@ -130,6 +130,62 @@
         "fature 1",
         "feature 2"
       ]
+    },
+    {
+      "id": "1001",
+      "name": "Home Venus",
+      "image": "https://www.camping-imprevu.fr/upload/images_actualite/mobil-home-lac-laffery-2-1-1320.jpg",
+      "description": "Living room with sofa bed , Fully equipped kitchen ,Covered wooden terrace",
+      "features": [
+        "TV",
+        "Air-conditioning",
+        "Bathroom with shower and separate WC",
+        "Electric hobs"
+      ]
+    },
+    {
+      "id": "1002",
+      "name": "Lodge-7",
+      "image": "https://www.camping-imprevu.fr/upload/images_actualite/exterieur-8696.jpg",
+      "description": "Living room with sofa bed , Fully equipped kitchen ,6/8 people",
+      "features": [
+        "TV",
+        "Air-conditioning",
+        "Bathroom with shower and separate WC"
+      ]
+    },
+    {
+      "id": "1003",
+      "name": "Superior chalet",
+      "image": "https://www.camping-imprevu.fr/upload/images_actualite/img_3012-min-8691.jpg",
+      "description":"Living room with pull-out sofa, Electric hobs",
+      "features":[
+        "Semi-covered terrace",
+        "Air-conditioning"
+      ]
+    },
+    {
+      "id": "1004",
+      "name": "Chalets PRM",
+      "image": "https://www.camping-imprevu.fr/upload/images_actualite/vacances-chalet-pmr-isere-1-1312.jpg",
+      "description":"Entrance and interior doors adapted to wheelchairs,Wheelchair-accessible bed on one side",
+      "features":[
+        "Accessible crockery",
+        "Kitchen worktop adapted to wheelchairs",
+        "Raised toilet with grab grab rail"
+      ]
+    },
+    {
+      "id": "1005",
+      "name": "Chalets Columbia ",
+      "image": "https://www.camping-imprevu.fr/upload/images_actualite/chalets-columbia-13941.jpg",
+      "description":"Nice Decorated Chalet with all required Features and all comforting and relaxing requirements",
+      "features":[
+        "Covered terrace",
+        "Shower room",
+        "Gas chob"
+      ]
     }
+
   ]
 }

@@ -1,26 +1,32 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
-export const habitaionsAction=createAsyncThunk("habitaions/getAll",async ()=>{
-    const res=await axios.get("http://localhost:8000/habitations");
-    const data=res.data;
-    return data;    
+import config from "../../config.json"
+export const habitationsAction=createAsyncThunk("habitations/getAll",async ()=>{
+    try{
+        const res=await axios.get("http://localhost:8000/habitations");
+        const data=res.data;
+        console.log(data);
+        return data;    
+    }catch(error){
+        return [];
+    }
+    
 })
 
 const habitationsSlice=createSlice({
-    name:"habitaions",
-    initialState:{habitaions:[],loading:false},
+    name:"habitations",
+    initialState:{habitations:[],loading:false},
     extraReducers:(builder)=>{
-        builder.addCase(habitaionsAction.fulfilled,(state,action)=>{
-            state.habitaions=action.payload;
+        builder.addCase(habitationsAction.fulfilled,(state,action)=>{
+            state.habitations=action.payload;
         })
-        builder.addCase(habitaionsAction.pending,(state,action)=>{
+        builder.addCase(habitationsAction.pending,(state,action)=>{
             state.loading=true;
-            state.habitaions=[];
+            state.habitations=[];
         })
-        builder.addCase(habitaionsAction.rejected,(state,action)=>{
+        builder.addCase(habitationsAction.rejected,(state,action)=>{
             state.loading=false;
-            state.habitaions=[];
+            state.habitations=[];
         })
     } 
 });

@@ -1,0 +1,23 @@
+#habitationsPage{
+    display: flex;
+    height: 100vh;
+}
+#firstitem{
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#image{
+    width: 40%;
+    border-radius: 50px;
+}
+#info{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+#itemlabel{
+    font-size: 50px;
+}
