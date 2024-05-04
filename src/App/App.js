@@ -11,12 +11,28 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import Programs from '../components/programs/Programs';
 import Contactpage from './contact/page/contactpage';
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import NotFound from '../Pages/NotFound.jsx';
+import Error from '../Pages/Error.jsx';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from '../Pages/Home.jsx';
 
 function App() {
+  const router=createBrowserRouter([
+    //{
+      
+      // path:"/",element:<Layout></Layout>,children:[
+        // {index:true,element:<Home></Home> ,errorElement:<NotFound></NotFound>},
+        {path:"/",element:<Home></Home>,errorElement:<NotFound></NotFound>},
+        {path:"/programs",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
+        {path:"*",element:<Error></Error>}
+      //]
+    //}
+    
+  ])
   return (
     <Provider  store={store}>
-        <Programs></Programs>
-        {/* <Contactpage></Contactpage> */}
+        
+        <RouterProvider router={router}></RouterProvider>
     </Provider>
   );
 }

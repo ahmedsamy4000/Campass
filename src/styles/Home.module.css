@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto+Slab:wght@100..900&display=swap');
+.title{
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    position:absolute;
+    color:white;
+    font-size:90pt;
+    padding-top :15%;
+    padding-left:53%;
+}
+.coverImg{  
+    height:750px;
+    width:100%
+}
+.logoImg{
+    height: 90px;
+    width: 90px;
+    margin: 40px;
+}
+.welcome{
+    font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+    
