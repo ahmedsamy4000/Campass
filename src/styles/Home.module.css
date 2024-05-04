@@ -19,11 +19,19 @@
     width: 90px;
     margin: 40px;
 }
-.welcome{
+.welcome,.txt{
     font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
+  margin: 30px;
+  
+}
+.txt{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    text-align: center;
 }
 
 

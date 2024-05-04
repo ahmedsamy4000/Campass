@@ -1,11 +1,14 @@
 import React from 'react';
-import Intro from '../components/Home/intro';
+import Intro from '../components/Home/Intro';
+import { Grid } from '@mui/material';
+import RecentlyPrograms from '../components/Home/RecentlyPrograms';
 
 const Home = () => {
     return (
-        <div>
+        <Grid container spacing={2}>
             <Intro></Intro>
-        </div>
+            <RecentlyPrograms></RecentlyPrograms>
+        </Grid>
     );
 }
 
