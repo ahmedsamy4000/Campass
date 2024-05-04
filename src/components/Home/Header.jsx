@@ -43,7 +43,7 @@ const Header = () => {
                                 <Link to="#">About</Link>
                             </li>
                             <li>
-                                <Link to="#" class={`${classes.button} ${classes.flower}`}></Link>
+                                <Link to="/signin" class={`${classes.button} ${classes.flower}`}></Link>
                             </li>
                         </ul>
                     </div>
