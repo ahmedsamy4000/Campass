@@ -2,7 +2,6 @@ import React from 'react';
 import classes from '../../Styles/Header.module.css'
 import { Link } from 'react-router-dom';
 import Body from './Body';
-import { MobileMenuComponent, ScrollMenuComponent } from './HeaderJ';
 
 
 const Header = () => {

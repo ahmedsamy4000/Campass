@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { usersAction } from '../../redux/slices/usersSlice';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -132,7 +133,7 @@ const Login = () => {
                 <div>
                     <button className={classes.btn} onClick={handleClick}>Sign in</button>
                 </div>
-                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"400"}>Not a Member? Register</Typography>
+                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Not a Member? <Link style={{color: "white"}} to={'/signup'}>Register</Link></Typography>
             </Box>
         </div>
     );

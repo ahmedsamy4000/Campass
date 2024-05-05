@@ -7,11 +7,13 @@ import axios from 'axios';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useDispatch, useSelector } from 'react-redux';
 import { usersAction } from '../../redux/slices/usersSlice';
+import { Link } from 'react-router-dom';
 
 
 const Register = () => {
     const [user, setUser] = useState({ fName: "", lName: "", email: "", phone: "", password: "", type: "" });
     const [errors, setErrors] = useState({ fName: "", lName: "", email: "", phone: "", password: "", type: "", confirmPassword: "" });
+    let obj = { fName: "", lName: "", email: "", phone: "", password: "", type: "", confirmPassword: "" };
     const [confirmPassword, setConfirmPassword] = useState("");
 
     const users = useSelector(state => state.users.users);
@@ -115,19 +117,21 @@ const Register = () => {
     const handleClick = async (event) => {
         event.preventDefault();
         if (user.fName === "")
-            setErrors({ ...errors, fName: "First Name is required" });
+            obj.fName = "First Name is required" ;
         if (user.lName === "")
-            setErrors({ ...errors, lName: "Last Name is required" });
+            obj.lName = "Last Name is required" ;
         if (user.email === "")
-            setErrors({ ...errors, email: "Email is required" });
+            obj.email = "Email is required" ;
         if (user.phone === "")
-            setErrors({ ...errors, phone: "Phone is required" });
+            obj.phone = "Phone is required" ;
         if (user.type === "")
+            obj.type = "Type is required" ;
             setErrors({ ...errors, type: "Type is required" });
         if (user.password === "")
-            setErrors({ ...errors, fName: "Password is required" });
+            obj.password = "Password is required" ;
         if (confirmPassword === "")
-            setErrors({ ...errors, confirmPassword: "Password is required" });
+            obj.confirmPassword = "Password is required" ;
+        setErrors(obj);
         if (user.fName !== "" && user.lName !== "" && user.email !== "" && user.phone !== "" && user.type !== "" && user.password !== "" && confirmPassword !== "") {
             if (!errors.fName && !errors.lName && !errors.email && !errors.type && !errors.phone && !errors.password && !errors.confirmPassword) {
                 const userFound = await users.find(u => u.email === user.email);
@@ -295,9 +299,8 @@ const Register = () => {
                 </FormControl>
                 <div>
                     <button className={classes.btn} style={{ marginTop: "18px" }} onClick={handleClick}>Sign Up</button>
-                    {/* <GoogleLogin onSuccess={(res)=>console.log(res)} onError={(res)=>console.log(res)}></GoogleLogin> */}
                 </div>
-                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Already have an account? Login</Typography>
+                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Already have an account? <Link style={{color: "white"}} to={'/signin'}>Login</Link></Typography>
             </Box>
         </div>
     );
