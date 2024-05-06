@@ -4,6 +4,7 @@ import feedbacksReducer from '../slices/FeedbacksSlice';
 import habitationsSlice from "../slices/habitationsSlice";
 import usersReducer from "../slices/usersSlice";
 import reservationsSlice from "../slices/reservationsSlice";
+import countriesSlice from './../slices/ContriesSlice';
 
 const store = configureStore({
     reducer: {
@@ -11,7 +12,9 @@ const store = configureStore({
         feedbacks:feedbacksReducer,
         habitations:habitationsSlice,
         users: usersReducer,
-        reservations:reservationsSlice
+        reservations:reservationsSlice,
+        countries:countriesSlice
+
     }
 })
 
