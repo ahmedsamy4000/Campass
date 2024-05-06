@@ -24,6 +24,8 @@ const Home = lazy(()=>import('../Pages/Home.jsx'));
 const Header = lazy(()=>import('../components/Home/Header.jsx'))
 const NotFound = lazy(()=>import('../Pages/NotFound.jsx'))
 const Feedback = lazy(()=>import('../components/Feedbacks/Feedbacks.jsx'))
+const Layout = lazy(()=>import('../components/Home/Layout.jsx'))
+const Countries = lazy(()=>import('../components/Countries/Countries.jsx'))
 const Error = lazy(()=>import('../Pages/Error.jsx'))
 
 
@@ -38,7 +40,8 @@ function App() {
           {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
           {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
           {path:"/booking/:id", element:<BookingPage></BookingPage>},
-          {path:"/feedbacks", element:<Feedback></Feedback>}
+          {path:"/feedbacks", element:<Feedback></Feedback>},
+          {path:"/countries", element:<Countries></Countries>}
         ]},
         {path:"/signin",element:<LoginPage/>,errorElement:<NotFound></NotFound>},
         {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
