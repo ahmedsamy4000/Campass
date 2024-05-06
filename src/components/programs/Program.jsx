@@ -2,8 +2,13 @@ import React from 'react';
 import classes from '../../Styles/programCard.module.css'
 import { Col } from 'react-bootstrap';
 import { Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Program = (program) => {
+    const navigatTo=useNavigate();
+    const navigateToBooking=()=>{
+        navigatTo(`/booking/${program.id}`,);
+    }
     return (
         <Col sm={6} md={4}>
             <div className={classes.card}>
@@ -41,6 +46,7 @@ const Program = (program) => {
                             <button
                             style={{boxShadow: "inset 0 2px 4px 0 rgb(2 6 23 / 0.3), inset 0 -2px 4px 0 rgb(203 213 225)"}}
                             className="inline-flex cursor-pointer items-center gap-1 rounded border border-slate-300 bg-gradient-to-b from-slate-50 to-slate-200 px-4 py-2 font-semibold hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 focus-visible:ring-offset-2 active:opacity-100"
+                            onClick={navigateToBooking}
                             >
                             Book
                             </button>

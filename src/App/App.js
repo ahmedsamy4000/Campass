@@ -13,6 +13,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Suspense, lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import BookingPage from './Booking/bookingPage.jsx';
 
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
@@ -37,6 +38,7 @@ function App() {
         {path:"/signin",element:<LoginPage/>,errorElement:<NotFound></NotFound>},
         {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
         {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
+        {path:"/booking/:id", element:<BookingPage></BookingPage>},
         {path:"*",element:<Error></Error>}
       //]
     //}
