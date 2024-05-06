@@ -23,18 +23,26 @@ const RegisterPage = lazy(() => import('../Pages/RegisterPage.jsx'));
 const Home = lazy(()=>import('../Pages/Home.jsx'));
 const Header = lazy(()=>import('../components/Home/Header.jsx'))
 const NotFound = lazy(()=>import('../Pages/NotFound.jsx'))
+const Feedback = lazy(()=>import('../components/Feedbacks/Feedbacks.jsx'))
+const Layout = lazy(()=>import('../components/Home/Layout.jsx'))
+const Countries = lazy(()=>import('../components/Countries/Countries.jsx'))
 const Error = lazy(()=>import('../Pages/Error.jsx'))
 const ProgramsAnalysisPage = lazy(()=> import('../Pages/programsAnalysisPage.jsx'))
-
 
 function App() {
   const router=createBrowserRouter([
     //{
       // path:"/",element:<Layout></Layout>,children:[
         // {index:true,element:<Home></Home> ,errorElement:<NotFound></NotFound>},
-        {path:"/",element:<Header></Header>,errorElement:<NotFound></NotFound>},
-        {path:"/programs",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
-        {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
+        {path:"/",element:<Layout></Layout>,errorElement:<NotFound></NotFound>, children:[
+          {index:true, element:<Home></Home>},
+          {path:"/programs",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
+          {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
+          {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
+          {path:"/booking/:id", element:<BookingPage></BookingPage>},
+          {path:"/feedbacks", element:<Feedback></Feedback>},
+          {path:"/countries", element:<Countries></Countries>}
+        ]},
         {path:"/signin",element:<LoginPage/>,errorElement:<NotFound></NotFound>},
         {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
         {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
@@ -46,16 +54,19 @@ function App() {
     
   ])
   return (
+    <Suspense fallback={<NotFound></NotFound>}>
     <GoogleOAuthProvider clientId='715821146371-ld1t66j0b5nc63hin96603jcia3p8k5f.apps.googleusercontent.com'>
-    <Provider  store={store}>
-      <Suspense fallback={<NotFound></NotFound>}>
-
+    
+      
+        <Provider  store={store}>
       <RouterProvider router={router}></RouterProvider>
-      </Suspense>
+      </Provider>
+      
         {/* <Programs></Programs> */}
         {/* <Contactpage></Contactpage> */}
-    </Provider>
+    
     </GoogleOAuthProvider>
+    </Suspense>
   );
 }
 

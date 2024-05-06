@@ -2,6 +2,7 @@ import React from 'react';
 import classes from '../../Styles/Header.module.css'
 import { Link } from 'react-router-dom';
 import Body from './Body';
+import Intro from './intro';
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
                 <nav className={classes.nav} id="menu">
                     <div className={classes.wrap}>
                         <div className={classes.brand}>
-                            <span>Campass</span>
+                            <Link to="/">Campass</Link>
                         </div>
                         <button id="mobile-btn" className={classes.hamburgerBtn}>
                             <span className={classes.hamburgerLine} />
@@ -30,7 +31,7 @@ const Header = () => {
                                 <Link to="/programs">Programs</Link>
                             </li>
                             <li>
-                                <Link to="#">Countries</Link>
+                                <Link to="/countries">Countries</Link>
                             </li>
                             <li>
                                 <Link to="/habitations">Habitations</Link>
@@ -39,7 +40,7 @@ const Header = () => {
                                 <Link to="/contact">Contact Us</Link>
                             </li>
                             <li>
-                                <Link to="#">About</Link>
+                                <Link to="/about">About</Link>
                             </li>
                             <li>
                                 <Link to="/signin" class={`${classes.button} ${classes.flower}`}></Link>
@@ -47,30 +48,11 @@ const Header = () => {
                         </ul>
                     </div>
                 </nav>
-                <Body></Body>
-                {/* <Switch>
-                    <Route path="/programs">
-                        <Programs />
-                    </Route>
-                    <Route path="/countries">
-                        <Countries />
-                    </Route>
-                    <Route path="/habitatiopns">
-                        <Habitatiopns />
-                    </Route>
-                    <Route path="/contact">
-                        <ContactUs />
-                    </Route>
-                    <Route path="/about">
-                        <About />
-                    </Route>
-                    <Route path="/">
-                        <Body />
-                    </Route>
-                </Switch> */}
-                <footer className={classes.footer}>
+                {/* <Body></Body> */}
+                {/* <Intro></Intro> */}
+                {/* <footer className={classes.footer}>
                     <div className={classes.row}>
-                        {/* <div className={classes.col6}>
+                        <div className={classes.col6}>
                             <p>
                                 <i className="fa fa-phone" aria-hidden="true" /> +44 (0)123 456 789
                             </p>
@@ -78,7 +60,7 @@ const Header = () => {
                                 <i className="fa fa-envelope" aria-hidden="true" />{" "}
                                 info@landingpage.com
                             </p>
-                        </div> */}
+                        </div>
                         <div className={classes.col4} style={{ textAlign: "left" }}>
                             <h3>Campass</h3>
                             <Link>
@@ -104,13 +86,13 @@ const Header = () => {
                             </Link>
                         </div>
                     </div>
-                    {/* <hr />
+                    <hr />
                     <div className={classes.row}>
                         <div className={classes.col12}>
                             © 2017 Brand - <a href="#">Facebook</a> - <a href="#">Twitter</a>
                         </div>
-                    </div> */}
-                </footer>
+                    </div>
+                </footer> */}
             </>
         </div>
     );
