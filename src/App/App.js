@@ -14,6 +14,8 @@ import { Suspense, lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import BookingPage from './Booking/bookingPage.jsx';
+import Cities from '../components/Cities/Cities.jsx';
+import Countries from '../components/Countries/Countries.jsx';
 
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
@@ -39,6 +41,12 @@ function App() {
         {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
         {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
         {path:"/booking/:id", element:<BookingPage></BookingPage>},
+        {path:"/Countries", element:<Countries></Countries>},
+        {path:"/Countries/:countryId", element:<Cities></Cities>},
+
+
+
+
         {path:"*",element:<Error></Error>}
       //]
     //}
