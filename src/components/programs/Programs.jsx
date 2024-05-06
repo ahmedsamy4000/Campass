@@ -19,7 +19,7 @@ const Programs = () => {
 
     if (programs.length === 0) return <SimpleBackdrop></SimpleBackdrop>
     return (
-        <div style={{ backgroundColor: "#F6F4E8" }}>
+        <div style={{ backgroundColor: "#F6F4E8", height:"100%", width:"100%" }}>
             <div className={classes.ad}>
                 <div className={classes.discover}>
                     <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>

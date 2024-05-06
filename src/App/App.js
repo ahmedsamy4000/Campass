@@ -24,7 +24,7 @@ const Home = lazy(()=>import('../Pages/Home.jsx'));
 const Header = lazy(()=>import('../components/Home/Header.jsx'))
 const NotFound = lazy(()=>import('../Pages/NotFound.jsx'))
 const Error = lazy(()=>import('../Pages/Error.jsx'))
-
+const ProgramsAnalysisPage = lazy(()=> import('../Pages/programsAnalysisPage.jsx'))
 
 
 function App() {
@@ -39,6 +39,7 @@ function App() {
         {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
         {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
         {path:"/booking/:id", element:<BookingPage></BookingPage>},
+        {path:"/analysis", element:<ProgramsAnalysisPage></ProgramsAnalysisPage>},
         {path:"*",element:<Error></Error>}
       //]
     //}
