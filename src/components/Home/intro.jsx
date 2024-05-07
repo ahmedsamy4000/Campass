@@ -8,7 +8,7 @@ const Intro = () => {
     return (
         <>
             <Grid item md={12}>
-                <p className={homeClass.title} style={{backgroundColor:"black"}}>CAMPASS</p>
+                <p className={homeClass.title}>CAMPASS</p>
                 <img className={homeClass.coverImg} src='cover.png' alt='Backgroung'></img>
             </Grid>
             <Grid item md={12} display="flex" justifyContent={"center"}>
