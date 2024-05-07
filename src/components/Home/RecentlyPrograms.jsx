@@ -14,7 +14,7 @@ const RecentlyPrograms = () => {
     return (
         <>
         <Grid md={12}>
-        <Typography variant="h3" component="h2" className={homeClass.welcome}>
+        <Typography variant="h3" component="h2" className={homeClass.welcome} style={{margin:"40px",marginTop:"110px"}}>
                     A Recent Programs
             </Typography>
         </Grid>

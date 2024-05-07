@@ -7,8 +7,8 @@
     position:absolute;
     color:white;
     font-size:90pt;
-    padding-top :15%;
-    padding-left:53%;
+    padding-top :9%;
+    padding-left:58%;
 }
 .coverImg{  
     height:750px;
@@ -17,7 +17,7 @@
 .logoImg{
     height: 90px;
     width: 90px;
-    margin: 40px;
+    margin: 20px;
 }
 .welcome,.txt{
     font-family: "Roboto Slab", serif;
@@ -32,6 +32,65 @@
     margin-right: 25%;
     margin-top: 30px;
     text-align: center;
+}
+
+.footer {
+    background-image: url('../../public/istockphoto-637325398-612x612.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    height: 500px;
+    width:100%
+}
+
+.footer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.footer li {
+    line-height: 1.5;
+}
+
+.footer a {
+    color: #aaa;
+}
+
+.footer hr {
+    max-width: 1000px;
+    border: 0;
+    height: 1px;
+    background: #a2aebb;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row{
+    display: block;
+}
+
+main .row{
+    min-height: 200px;
+}
+
+main .row:before,
+main .row:after {
+    content: "";
+    display: table;
 }
 
 
