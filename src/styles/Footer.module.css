@@ -1,0 +1,30 @@
+.colourblock {
+    background: #369A7E;
+    /* width: 60%; */
+    padding: 7% 20% 10% 20%;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'wire one', serif;
+    font-weight: normal;
+}
+
+p {
+    font-size: 20px;
+    font-family: 'Raleway', serif;
+}
+
+
+
+/*----------------*/
+/*  SCALLOP up    */
+/*----------------*/
+.scallopup {
+    height: 100px;
+    width: 100%;
+    background: -webkit-gradient(radial, 50% 100%, 10, 50% 100%, 40, from(#369A7E), color-stop(0.49, #369A7E), color-stop(0.51, #fff), to(white));
+    -webkit-background-size: 49px 100%;
+}
