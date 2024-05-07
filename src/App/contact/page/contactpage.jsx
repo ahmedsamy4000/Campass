@@ -20,7 +20,7 @@ const Contactpage = () => {
             
                 "id":uuid(),
                 "message":message,
-                "userId":"100",
+                "Email":localStorage.getItem("email"),
                 "date":new Date(Date.now()).toLocaleString()
             
         }));
@@ -49,7 +49,7 @@ const Contactpage = () => {
                 <div className='d-flex flex-column col-4 text-white m-auto justify-content-start h-100'>
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
-                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Ahmed Samy" />
+                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder={localStorage.getItem("email")} />
                     </div>
 
                     <div className="mb-3">
