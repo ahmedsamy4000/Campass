@@ -37,6 +37,9 @@ const Header = () => {
                                 <Link to="/programs">Programs</Link>}
                             </li>
                             <li>
+                            {isAuth && localStorage.getItem('type') === 'Admin' && (<Link to="/analysis">Analysis</Link>)}
+                            </li>
+                            <li>
                                 <Link to="/countries">Countries</Link>
                             </li>
                             <li>
