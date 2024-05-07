@@ -7,7 +7,9 @@ import axios from 'axios';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useDispatch, useSelector } from 'react-redux';
 import { usersAction } from '../../redux/slices/usersSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { changeAuth } from '../../redux/slices/authSlice';
 
 
 const Register = () => {
@@ -18,6 +20,7 @@ const Register = () => {
 
     const users = useSelector(state => state.users.users);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     useEffect(() => {
         dispatch(usersAction());
     }, [dispatch])
@@ -33,21 +36,29 @@ const Register = () => {
 
     const googleLogin = useGoogleLogin({
         onSuccess: (res) => {
-            axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${res.access_token}`, {
-                headers: {
-                    Authorization: `Bearer ${user.access_token}`,
-                    Accept: 'application/json'
-                }
-            }).then((data) => {
-                const userFound = users.find(u => u.email === data.data.email)
-                if (userFound)
-                    alert("email is already exist");
-                else {
-                    axios.post("http://localhost:8000/users",
-                        { id: data.data.id, email: data.data.email, fName: data.data.given_name, lName: data.data.family_name, phone: "", password: "", type: "" })
-                }
-            })
-
+            try {
+                axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${res.access_token}`, {
+                    headers: {
+                        Authorization: `Bearer ${user.access_token}`,
+                        Accept: 'application/json'
+                    }
+                }).then((data) => {
+                    const userFound = users.find(u => u.email === data.data.email)
+                    if (userFound)
+                        toast.error("Email is already exist");
+                    else {
+                        axios.post("http://localhost:8000/users",
+                            { id: data.data.id, email: data.data.email, fName: data.data.given_name, lName: data.data.family_name, phone: "", password: "", type: "" }).then(() => {
+                                localStorage.setItem('email', user.email);
+                                localStorage.setItem('type', user.type);
+                                dispatch(changeAuth(true));
+                                navigate('/');
+                            })
+                    }
+                })
+            } catch (err) {
+                toast.error('Registeration Faild')
+            }
         },
         onError: (err) => {
             console.log(err);
@@ -116,27 +127,37 @@ const Register = () => {
 
     const handleClick = async (event) => {
         event.preventDefault();
-        if (user.fName === "")
-            obj.fName = "First Name is required" ;
-        if (user.lName === "")
-            obj.lName = "Last Name is required" ;
-        if (user.email === "")
-            obj.email = "Email is required" ;
-        if (user.phone === "")
-            obj.phone = "Phone is required" ;
-        if (user.type === "")
-            obj.type = "Type is required" ;
-            setErrors({ ...errors, type: "Type is required" });
-        if (user.password === "")
-            obj.password = "Password is required" ;
-        if (confirmPassword === "")
-            obj.confirmPassword = "Password is required" ;
+        if (!user.fName)
+            obj.fName = "First Name is required";
+        if (!user.lName)
+            obj.lName = "Last Name is required";
+        if (!user.email)
+            obj.email = "Email is required";
+        if (!user.phone)
+            obj.phone = "Phone is required";
+        if (!user.type)
+            obj.type = "Type is required";
+        setErrors({ ...errors, type: "Type is required" });
+        if (!user.password)
+            obj.password = "Password is required";
+        if (!confirmPassword)
+            obj.confirmPassword = "Password is required";
         setErrors(obj);
-        if (user.fName !== "" && user.lName !== "" && user.email !== "" && user.phone !== "" && user.type !== "" && user.password !== "" && confirmPassword !== "") {
+        if (user.fName && user.lName && user.email && user.phone && user.type && user.password && confirmPassword) {
             if (!errors.fName && !errors.lName && !errors.email && !errors.type && !errors.phone && !errors.password && !errors.confirmPassword) {
                 const userFound = await users.find(u => u.email === user.email);
                 if (!userFound) {
-                    axios.post("http://localhost:8000/users", user);
+                    try {
+                        axios.post("http://localhost:8000/users", user).then((res) => {
+                            localStorage.setItem('email', userFound.email);
+                            localStorage.setItem('type', userFound.type);
+                            dispatch(changeAuth(true));
+                            navigate('/');
+                        })
+                    }
+                    catch (err) {
+                        toast.error("Registeration Faild");
+                    }
                 }
                 else {
                     setErrors({ ...errors, email: "Email is already exist" });
@@ -144,6 +165,7 @@ const Register = () => {
             }
         }
     }
+
 
     return (
         <div className={classes.form}>
@@ -165,7 +187,7 @@ const Register = () => {
 
                 <Grid container justifyContent={"center"}>
                     <Grid item md={5} xs={12}>
-                        <TextField variant='standard' type='text' label='First Name' name='fName' value={user.fName} onChange={handleChange}
+                        <TextField autoComplete='off' variant='standard' type='text' label='First Name' name='fName' value={user.fName} onChange={handleChange}
                             sx={{
                                 width: "90%", marginTop: "15px",
                                 "& .MuiInput-root": {
@@ -178,7 +200,7 @@ const Register = () => {
                         <Typography alignItems={"start"} color={"error.main"}>{errors.fName}</Typography>
                     </Grid>
                     <Grid item md={5} xs={12}>
-                        <TextField variant='standard' type='text' label='Last Name' name='lName' value={user.lName} onChange={handleChange}
+                        <TextField autoComplete='off' variant='standard' type='text' label='Last Name' name='lName' value={user.lName} onChange={handleChange}
                             sx={{
                                 width: "90%", marginTop: "15px",
                                 "& .MuiInput-root": {
@@ -194,7 +216,7 @@ const Register = () => {
 
                 <Grid container justifyContent={"center"}>
                     <Grid item md={5} xs={12}>
-                        <TextField variant='standard' type='email' label='Email' name='email' value={user.email} onChange={handleChange}
+                        <TextField autoComplete='off' variant='standard' type='email' label='Email' name='email' value={user.email} onChange={handleChange}
                             sx={{
                                 width: "90%", marginTop: "15px",
                                 "& .MuiInput-root": {
@@ -207,7 +229,7 @@ const Register = () => {
                         <Typography color={"error.main"}>{errors.email}</Typography>
                     </Grid>
                     <Grid item md={5} xs={12}>
-                        <TextField variant='standard' type='tel' label='Phone Number' name='phone' value={user.phone} onChange={handleChange}
+                        <TextField autoComplete='off' variant='standard' type='tel' label='Phone Number' name='phone' value={user.phone} onChange={handleChange}
                             sx={{
                                 width: "90%", marginTop: "15px",
                                 "& .MuiInput-root": {
@@ -300,8 +322,9 @@ const Register = () => {
                 <div>
                     <button className={classes.btn} style={{ marginTop: "18px" }} onClick={handleClick}>Sign Up</button>
                 </div>
-                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Already have an account? <Link style={{color: "white"}} to={'/signin'}>Login</Link></Typography>
+                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Already have an account? <Link style={{ color: "white" }} to={'/signin'}>Login</Link></Typography>
             </Box>
+            <Toaster position='top-center'></Toaster>
         </div>
     );
 }

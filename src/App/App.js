@@ -14,6 +14,8 @@ import { Suspense, lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import BookingPage from './Booking/bookingPage.jsx';
+import SimpleBackdrop from '../components/spinner.jsx';
+import AuthProtected from '../components/Guards/AuthProtected.jsx'
 
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
@@ -21,13 +23,17 @@ const LoginPage = lazy(() => import('../Pages/LoginPage.jsx'));
 const HabitationsPage=lazy(()=>import('./habitations/habitationsPage.jsx'))
 const RegisterPage = lazy(() => import('../Pages/RegisterPage.jsx'));
 const Home = lazy(()=>import('../Pages/Home.jsx'));
-const Header = lazy(()=>import('../components/Home/Header.jsx'))
+const ProgramsAnalysisPage = lazy(()=> import('../Pages/programsAnalysisPage.jsx'));
+const CompanyPage = lazy(() => import('../Pages/CompanyPage.jsx'));
+const AboutUs = lazy(() => import('../Pages/AboutUs.jsx'));
+const Feedback = lazy(()=>import('../components/Feedbacks/Feedbacks.jsx'));
+const Layout = lazy(()=>import('../components/Home/Layout.jsx'));
+const Countries = lazy(()=>import('../components/Countries/Countries.jsx'));
+const ReservationsPage = lazy(()=>import('../Pages/ReservationsPage.jsx'));
+
 const NotFound = lazy(()=>import('../Pages/NotFound.jsx'))
-const Feedback = lazy(()=>import('../components/Feedbacks/Feedbacks.jsx'))
-const Layout = lazy(()=>import('../components/Home/Layout.jsx'))
-const Countries = lazy(()=>import('../components/Countries/Countries.jsx'))
 const Error = lazy(()=>import('../Pages/Error.jsx'))
-const ProgramsAnalysisPage = lazy(()=> import('../Pages/programsAnalysisPage.jsx'))
+
 
 function App() {
   const router=createBrowserRouter([
@@ -41,32 +47,33 @@ function App() {
           {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
           {path:"/booking/:id", element:<BookingPage></BookingPage>},
           {path:"/feedbacks", element:<Feedback></Feedback>},
-          {path:"/countries", element:<Countries></Countries>}
+          {path:"/countries", element:<Countries></Countries>},
+          { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
+          { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
         ]},
-        {path:"/signin",element:<LoginPage/>,errorElement:<NotFound></NotFound>},
-        {path:"/signup",element:<RegisterPage/>,errorElement:<NotFound></NotFound>},
+        { path: "/signin", element: <AuthProtected><LoginPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
+        { path: "/signup", element: <AuthProtected><RegisterPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
         {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
-        {path:"/booking/:id", element:<BookingPage></BookingPage>},
+        {path:"/booking/:id", element:<BookingPage></BookingPage>},       
         {path:"/analysis", element:<ProgramsAnalysisPage></ProgramsAnalysisPage>},
+        { path: "/company/programs", element: <CompanyPage></CompanyPage>, errorElement: <NotFound></NotFound> },
         {path:"*",element:<Error></Error>}
       //]
     //}
     
   ])
   return (
-    <Suspense fallback={<NotFound></NotFound>}>
+    <Suspense fallback={<SimpleBackdrop />}>
     <GoogleOAuthProvider clientId='715821146371-ld1t66j0b5nc63hin96603jcia3p8k5f.apps.googleusercontent.com'>
-    
-      
-        <Provider  store={store}>
-      <RouterProvider router={router}></RouterProvider>
-      </Provider>
-      
+      <Provider store={store}>
+
+        <RouterProvider router={router}></RouterProvider>
+
         {/* <Programs></Programs> */}
         {/* <Contactpage></Contactpage> */}
-    
+      </Provider>
     </GoogleOAuthProvider>
-    </Suspense>
+  </Suspense>
   );
 }
 

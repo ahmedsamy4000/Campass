@@ -1,0 +1,180 @@
+:root {
+    --clr-neutral-900: #F6F4E8;
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-accent-400: #7C782F;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+    background: var(--clr-neutral-900);
+    font-family: sans-serif;
+    padding-right: 15em;
+}
+
+.card {
+    color: var(--clr-neutral-100);
+    /* background-image: url(https://cdn.kimkim.com/files/a/images/a426c671c2ca249a820a66a41278162fa111dac7/big-8677d5f5983586f9fdc730ed57d8c81b.jpg); */
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 50ch;
+    height: 600px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+    transform: scale(1.05);
+}
+
+.cardContent {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(hsl(0 0% 0% / 0),
+            hsl(20 0% 0% / 0.3) 5%,
+            hsl(0 0% 0% / 1));
+    height: 500px;
+}
+
+.cardTitle {
+    position: relative;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.card:hover .cardTitle::after,
+.card:focus-within .cardTitle::after {
+    transform: scaleX(1);
+}
+
+.cardTitle::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: calc(100% + var(--padding));
+    left: calc(var(--padding) * -1);
+    bottom: -4px;
+    background: var(--clr-accent-400);
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+@media (hover) {
+    .cardContent {
+        transform: translateY(65%);
+        transition: transform 500ms ease;
+    }
+
+    .cardContent>*:not(.cardTitle) {
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+
+    .card:hover .cardContent>*:not(.cardTitle),
+    .card:focus-within .cardContent>*:not(.cardTitle) {
+        opacity: 1;
+        transition-delay: 700ms;
+    }
+
+    .card:hover .cardContent,
+    .card:focus-within .cardContent {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .cardContent {
+        transition-duration: 0ms;
+    }
+
+    .cardTitle::after {
+        transform: scaleX(0);
+    }
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-accent-400);
+    padding: 0.5em 1.25em;
+    border-radius: 0.25rem;
+    border: 2px #7C782F solid;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--clr-neutral-100);
+    color: #7C782F;
+}
+
+.cardBody {
+    color: rgb(255, 255, 255/0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+.programs {
+    animation: fadeInAnimation ease 2s;
+    margin: auto;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: #F6F4E8;
+    border: 2px #F6F4E8 solid;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+@media (min-width: 100px) {
+    .modal {
+        width: 90%;
+    }
+}
+
+
+@media (min-width: 800px) {
+    .modal {
+        width: 50%;
+    }
+}

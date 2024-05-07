@@ -419,7 +419,7 @@ button.cta:hover {
 }
 
 .flower:after {
-    content: "Login";
+    /* content: "Login"; */
     font-size: 15px;
     left: 18px;
     top: 0px;

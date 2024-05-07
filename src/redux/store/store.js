@@ -5,6 +5,8 @@ import habitationsSlice from "../slices/habitationsSlice";
 import usersReducer from "../slices/usersSlice";
 import reservationsSlice from "../slices/reservationsSlice";
 import countriesSlice from './../slices/ContriesSlice';
+import userReducer from "../slices/userDetailsSlice";
+import authReducer from "../slices/authSlice";
 
 const store = configureStore({
     reducer: {
@@ -13,7 +15,9 @@ const store = configureStore({
         habitations:habitationsSlice,
         users: usersReducer,
         reservations:reservationsSlice,
-        countries:countriesSlice
+        countries:countriesSlice,
+        user: userReducer,
+        isAuth: authReducer,
 
     }
 })

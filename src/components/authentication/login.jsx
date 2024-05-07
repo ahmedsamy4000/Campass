@@ -7,7 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { usersAction } from '../../redux/slices/usersSlice';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { changeAuth } from '../../redux/slices/authSlice';
 
 
 const Login = () => {
@@ -15,6 +17,7 @@ const Login = () => {
     const [user, setUser] = useState({ email: "", password: "" });
     const dispatch = useDispatch();
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     // const [placeholder, setPlaceholder] = useState('');
     // const string = 'Weelcome Back ...'
@@ -56,28 +59,40 @@ const Login = () => {
         else {
             if (userFound.password !== user.password)
                 setError("Invalid Email/Password");
-            else
+            else {
+                localStorage.setItem('email', userFound.email);
+                localStorage.setItem('type', userFound.type);
+                dispatch(changeAuth(true));
+                navigate('/')
                 setError("");
+            }
         }
     }
 
     const googleLogin = useGoogleLogin({
         onSuccess: (res) => {
-            axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${res.access_token}`, {
-                headers: {
-                    Authorization: `Bearer ${user.access_token}`,
-                    Accept: 'application/json'
-                }
-            }).then((data) => {
-                const userFound = users.find(u => u.email === data.data.email)
-                if (userFound) {
-                    alert("Logged in successfully");
-                    setError("");
-                }
-                else {
-                    setError("Invalid Email");
-                }
-            })
+            try {
+                axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${res.access_token}`, {
+                    headers: {
+                        Authorization: `Bearer ${user.access_token}`,
+                        Accept: 'application/json'
+                    }
+                }).then((data) => {
+                    const userFound = users.find(u => u.email === data.data.email)
+                    if (userFound) {
+                        setError("");
+                        localStorage.setItem('email', userFound.email);
+                        localStorage.setItem('type', userFound.type);
+                        dispatch(changeAuth(true));
+                        navigate('/')
+                    }
+                    else {
+                        toast.error("Email not found, please sign up");
+                    }
+                })
+            } catch (err) {
+                toast.error('Login Faild');
+            }
         },
         onError: (err) => {
             console.log(err);
@@ -93,7 +108,7 @@ const Login = () => {
                     <GoogleIcon sx={{ color: 'white' }}></GoogleIcon>
                 </IconButton>
                 <Typography my={2} fontSize={"18px"} fontFamily={"Rubik, sans-serif"} fontWeight={"400"}>Or</Typography>
-                <TextField className={classes.textField} variant='standard' type='email' label='Email' name='email' value={user.email} onChange={handleChange}
+                <TextField autoComplete='off' className={classes.textField} variant='standard' type='email' label='Email' name='email' value={user.email} onChange={handleChange}
                     sx={{
                         "& .MuiInput-root": {
                             color: "white", "&:before": { borderColor: "white", borderWidth: "2px" },
@@ -133,8 +148,9 @@ const Login = () => {
                 <div>
                     <button className={classes.btn} onClick={handleClick}>Sign in</button>
                 </div>
-                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Not a Member? <Link style={{color: "white"}} to={'/signup'}>Register</Link></Typography>
+                <Typography fontFamily={"Rubik, sans-serif"} fontWeight={"500"} fontSize={"18px"}>Not a Member? <Link style={{ color: "white" }} to={'/signup'}>Register</Link></Typography>
             </Box>
+            <Toaster position='top-center' />
         </div>
     );
 }

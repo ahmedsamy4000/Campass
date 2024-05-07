@@ -3,9 +3,13 @@ import classes from '../../Styles/Header.module.css'
 import { Link } from 'react-router-dom';
 import Body from './Body';
 import Intro from './intro';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeAuth } from '../../redux/slices/authSlice';
 
 
 const Header = () => {
+    const isAuth = useSelector(state => state.isAuth.isAuth);
+    const dispatch = useDispatch();
     return (
         <div>
             <>
@@ -28,7 +32,9 @@ const Header = () => {
                                 </Link> */}
                             </li>
                             <li>
-                                <Link to="/programs">Programs</Link>
+                                {(isAuth && localStorage.getItem('type') === 'Company') ? 
+                                <Link to="/company/programs">Programs</Link>:
+                                <Link to="/programs">Programs</Link>}
                             </li>
                             <li>
                                 <Link to="/countries">Countries</Link>
@@ -43,7 +49,14 @@ const Header = () => {
                                 <Link to="/about">About</Link>
                             </li>
                             <li>
-                                <Link to="/signin" class={`${classes.button} ${classes.flower}`}></Link>
+                               { !isAuth? 
+                               <Link to="/signin" className={`${classes.button} ${classes.flower}`}>Login</Link>:
+                               <Link to="/" className={`${classes.button} ${classes.flower}`} onClick={()=>{
+                                localStorage.removeItem('email'); 
+                                localStorage.removeItem('type');
+                                dispatch(changeAuth(false));
+                            }}>Logout</Link>
+                            }
                             </li>
                         </ul>
                     </div>
