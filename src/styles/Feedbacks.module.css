@@ -1,0 +1,15 @@
+.div2{
+    width: auto;
+    height: 160px;
+    margin: 50px;
+    background-color: whitesmoke;
+    box-shadow: rgba(194, 103, 51, 0.4) -5px 5px, rgba(212, 143, 64, 0.3) -10px 10px, rgba(221, 155, 93, 0.2) -15px 15px, rgba(190, 157, 106, 0.1) -20px 20px, rgba(194, 148, 110, 0.05) -25px 25px;
+}
+body{
+    background-image: url("../../public/img10.jpg");
+    background-size: contain;
+}
+.div1{
+    justify-content: center;
+    align-items: center;
+}
