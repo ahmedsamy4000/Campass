@@ -149,8 +149,8 @@ const Register = () => {
                 if (!userFound) {
                     try {
                         axios.post("http://localhost:8000/users", user).then((res) => {
-                            localStorage.setItem('email', userFound.email);
-                            localStorage.setItem('type', userFound.type);
+                            localStorage.setItem('email', user.email);
+                            localStorage.setItem('type', user.type);
                             dispatch(changeAuth(true));
                             navigate('/');
                         })
