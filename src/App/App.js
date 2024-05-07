@@ -16,6 +16,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import BookingPage from './Booking/bookingPage.jsx';
 import SimpleBackdrop from '../components/spinner.jsx';
 import AuthProtected from '../components/Guards/AuthProtected.jsx'
+import Cities from '../components/Cities/Cities.jsx';
 
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
@@ -48,6 +49,8 @@ function App() {
           {path:"/booking/:id", element:<BookingPage></BookingPage>},
           {path:"/feedbacks", element:<Feedback></Feedback>},
           {path:"/countries", element:<Countries></Countries>},
+          {path:"/countries/:countryId", element:<Cities></Cities>},
+
           { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
           { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
         ]},
