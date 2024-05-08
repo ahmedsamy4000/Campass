@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { programsAction } from '../../redux/slices/programsSlice';
 import Program from '../programs/Program';
 import homeClass from '../../Styles/Home.module.css';
+import { Container, Row } from 'react-bootstrap';
 const RecentlyPrograms = () => {
     const programs = useSelector((state) => state.programs.programs);
     const dispatch = useDispatch();
@@ -15,12 +16,17 @@ const RecentlyPrograms = () => {
         <>
         <Grid md={12}>
         <Typography variant="h3" component="h2" className={homeClass.welcome} style={{margin:"40px",marginTop:"110px"}}>
-                    A Recent Programs
+                    Recent Programs
             </Typography>
         </Grid>
-            <Program {...programs[0]}></Program>
-            <Program {...programs[1]}></Program>
-            <Program {...programs[2]}></Program>
+        <Container>
+            <Row>
+                <Program {...programs[0]}></Program>
+                <Program {...programs[1]}></Program>
+                <Program {...programs[2]}></Program>
+            </Row>
+        </Container>
+            
         
         </>
     );
