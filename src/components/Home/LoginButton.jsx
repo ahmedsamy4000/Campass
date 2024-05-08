@@ -6,7 +6,7 @@ const LoginButton = () => {
     return (
         <div data-tooltip="Price:-$20" className={classes.button}>
             <div className={classes.buttonwrapper}>
-                <div className={classes.text}>Buy Now</div>
+                <div className={classes.text}>Login</div>
                 <span className={classes.icon}>
                     <LockPersonTwoToneIcon fontSize="small" />
                 </span>

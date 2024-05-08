@@ -1,0 +1,31 @@
+.InputContainer {
+    margin-left: 30px;
+    width: 210px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid white;
+    color: white;
+  }
+  
+  .input {
+    width: 200px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent; /* Blurred background */
+    border-radius: 30px;
+    padding-left: 15px;
+    letter-spacing: 0.8px;
+    color: whitesmoke;
+    font-size: 13.4px;
+  }
+  /* SearchButton.module.css */
+.input::placeholder {
+  color: #ccc; /* Placeholder color */
+}
