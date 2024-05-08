@@ -3,24 +3,19 @@
     /* width: 60%; */
     padding: 7% 20% 10% 20%;
     color: #fff;
-    display: flex;
-    flex-direction: column;
 }
 
-.h1 {
-    text-align: left;
-    font-size: 60px;
-    font-family: "Sedan SC";
-    font-weight: bold;
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'wire one', serif;
+    font-weight: normal;
 }
 
-.p {
+p {
     font-size: 20px;
     font-family: 'Raleway', serif;
-    color: #fff;
-    text-decoration: none;
 }
-
 
 
 

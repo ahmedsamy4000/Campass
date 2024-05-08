@@ -15,20 +15,20 @@ const Header = () => {
     };
 
     return (
-        <Box sx={{ width: '100%', position: 'absolute'}}>
+        <Box sx={{ width: '100%', position: 'absolute' ,zIndex:'2000'}}>
             <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: '1px', padding: '10px', }}>
                 <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
                     <img src="Compass.gif" alt="Logo" style={{ width: '50px', height: 'auto', marginRight: '10px', borderRadius: '50%' }} />
-                    <span style={{fontFamily: "Sedan SC", fontSize: '30px', color: 'white' }}>Campass</span>
+                    <span style={{ fontSize: '30px', fontWeight: 'bold', color: 'white', fontFamily: "Sedan SC" }}>Campass</span>
                 </Link>
-                {/* <SearchButton/> */}
+                <SearchButton></SearchButton>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ marginLeft: "300px", "& .MuiTabs-indicator": { backgroundColor: '#DFD0B8' } }} >
                     <Tab label="Programs" component={Link} to="/programs" sx={{ color: "white", '&.Mui-selected': { color: '#DFD0B8' }, marginRight: "5px" }} />
                     <Tab label="Countries" component={Link} to="/countries" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' }, marginRight: '5px' }} />
                     <Tab label="Habitations" component={Link} to="/habitations" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' }, marginRight: '5px' }} />
                     <Tab label="Contact Us" component={Link} to="/contact" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' }, marginRight: '5px' }} />
                     <Tab label="About" component={Link} to="/about" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' }, marginRight: '10px' }} />
-                    {/* <Link to="/signin" ><LoginButton label={<LockPersonTwoToneIcon />}/></Link> */}
+                    <Link to="/signin" ><LoginButton label={<LockPersonTwoToneIcon />}/></Link>
                 </Tabs>
             </Box>
         </Box>
