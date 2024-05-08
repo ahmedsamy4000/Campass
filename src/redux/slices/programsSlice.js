@@ -29,7 +29,25 @@ export const programsHabitationAction = createAsyncThunk("programs/getByHabitati
     }
 });
 
+export const Manageprogram = createAsyncThunk("programs/manageprogram", async ({programId,program}) => {
+    try {
+        const res = await axios.put(config.programsApi+`/${programId}`,program);
+        
+    } catch (error) {
+        console.error("Error fetching programs by habitation ID:", error);
+        return [];
+    }
+});
 
+export const Deleteprogram = createAsyncThunk("programs/manageprogram", async (programId) => {
+    try {
+        const res = await axios.delete(config.programsApi+`/${programId}`);
+        
+    } catch (error) {
+        console.error("Error fetching programs by habitation ID:", error);
+        return [];
+    }
+});
 
 const programSlice = createSlice({
     name: "programs",
