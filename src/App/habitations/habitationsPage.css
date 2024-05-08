@@ -1,6 +1,6 @@
 #habitationsPage{
     display: flex;
-    height: 100vh;
+    background-color: white;
 }
 #firstitem{
     margin-top: 30px;
