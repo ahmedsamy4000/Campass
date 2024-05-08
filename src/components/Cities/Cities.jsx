@@ -28,13 +28,13 @@ const Cities = () => {
        <main className="main">
       <section className="card-lg__container">
           <img src={country.Image} alt="Background" className="background-img" />
-        <h1 className="font-weight-bold">Lest explore</h1>
+        <h1 className="font-weight-bold">Let's explore</h1>
         <h1 className="font-weight-bold">{country.Name}</h1>
       </section>
     
       <section className="card-sm__container">
         {country.Cities.map(city => (
-          <City key={city.id} city={city} />
+          <City key={city.id} city={city} country={countryId}/>
         ))}
       </section>
     </main>
