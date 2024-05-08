@@ -107,7 +107,7 @@
       "date": "2024-5-10",
       "discount": "10",
       "habitations": [
-        "1"
+        1
       ],
       "totalReservations": 0,
       "rate": 0,
@@ -129,8 +129,8 @@
       "date": "2024-5-15",
       "discount": "0",
       "habitations": [
-        "1",
-        "2"
+        1,
+        2
       ],
       "totalReservations": 50,
       "rate": 4,
@@ -152,8 +152,9 @@
       "date": "2024-5-8",
       "discount": "20",
       "habitations": [
-        "1",
-        "3"
+        1,
+        3,
+        6
       ],
       "totalReservations": 200,
       "rate": 3.5,
@@ -176,9 +177,9 @@
       "date": "2024-5-15",
       "discount": "5",
       "habitations": [
-        "1",
-        "2",
-        "3"
+        1,
+        2,
+        3
       ],
       "totalReservations": 150,
       "rate": 5,
@@ -199,8 +200,9 @@
       "date": "2024-5-20",
       "discount": "10",
       "habitations": [
-        "1",
-        "2"
+        1,
+        2,
+        4
       ],
       "totalReservations": 20,
       "rate": 3,
@@ -221,7 +223,8 @@
       "date": "2024-5-9",
       "discount": "12",
       "habitations": [
-        "1"
+        1,
+        5
       ],
       "totalReservations": 30,
       "rate": 2,
@@ -242,8 +245,9 @@
       "date": "2024-5-25",
       "discount": "15",
       "habitations": [
-        "1",
-        "2"
+        1,
+        2,
+        4
       ],
       "totalReservations": 70,
       "rate": 5,
@@ -261,7 +265,7 @@
   ],
   "habitations": [
     {
-      "id": "100",
+      "id": "1",
       "name": "habitation 1",
       "image": "https://lh5.googleusercontent.com/proxy/J8o2WGU14Bqiy94R5yGK7Q8uSkb2J5RSAPw4SWEP0q8pDvjKoQmUkENWiq18OO-xfcxNixcV7pcy097qgXcMCZXwprixQjT7wysG3OSMtDel8phkLySaRzdrjVf1",
       "description": "good quite habitations",
@@ -271,7 +275,7 @@
       ]
     },
     {
-      "id": "1001",
+      "id": "2",
       "name": "Home Venus",
       "image": "https://www.camping-imprevu.fr/upload/images_actualite/mobil-home-lac-laffery-2-1-1320.jpg",
       "description": "Living room with sofa bed , Fully equipped kitchen ,Covered wooden terrace",
@@ -283,7 +287,7 @@
       ]
     },
     {
-      "id": "1002",
+      "id": "3",
       "name": "Lodge-7",
       "image": "https://www.camping-imprevu.fr/upload/images_actualite/exterieur-8696.jpg",
       "description": "Living room with sofa bed , Fully equipped kitchen ,6/8 people",
@@ -294,7 +298,7 @@
       ]
     },
     {
-      "id": "1003",
+      "id": "4",
       "name": "Superior chalet",
       "image": "https://www.camping-imprevu.fr/upload/images_actualite/img_3012-min-8691.jpg",
       "description": "Living room with pull-out sofa, Electric hobs",
@@ -304,7 +308,7 @@
       ]
     },
     {
-      "id": "1004",
+      "id": "5",
       "name": "Chalets PRM",
       "image": "https://www.camping-imprevu.fr/upload/images_actualite/vacances-chalet-pmr-isere-1-1312.jpg",
       "description": "Entrance and interior doors adapted to wheelchairs,Wheelchair-accessible bed on one side",
@@ -315,7 +319,7 @@
       ]
     },
     {
-      "id": "1005",
+      "id": "6",
       "name": "Chalets Columbia ",
       "image": "https://www.camping-imprevu.fr/upload/images_actualite/chalets-columbia-13941.jpg",
       "description": "Nice Decorated Chalet with all required Features and all comforting and relaxing requirements",
@@ -455,33 +459,7 @@
         }
       ]
     },
-    {
-      "id": "6",
-      "Name": "Maldives",
-      "Image": "https://c4.wallpaperflare.com/wallpaper/484/284/850/sand-beach-the-sky-birds-wallpaper-preview.jpg",
-      "Cities": [
-        {
-          "id": "13",
-          "Name": "Kunfunadhoo Island",
-          "Image": "https://i.pinimg.com/474x/41/d1/b9/41d1b9e16538d3c29c400b56e463e775.jpg"
-        },
-        {
-          "id": "14",
-          "Name": "Kuredu",
-          "Image": "https://i.pinimg.com/474x/f0/62/d8/f062d81f2e6de94f01e81fe9423c4c66.jpg"
-        },
-        {
-          "id": "15",
-          "Name": "Fuvahmulah",
-          "Image": "https://cdn.thecrazytourist.com/wp-content/uploads/2017/04/Fuvahmulah.jpg"
-        },
-        {
-          "id": "16",
-          "Name": "Maafushi",
-          "Image": "https://i.pinimg.com/564x/17/37/ac/1737ac1228dd442a310f62d3dd96b2af.jpg"
-        }
-      ]
-    },
+
     {
       "id": "5",
       "Name": "Indonesia",
@@ -513,6 +491,35 @@
           "Image": "https://i.pinimg.com/474x/86/cb/ce/86cbce36588ea9f3808444e476da34b7.jpg"
         }
       ]
-    }
+    },
+    
+    {
+      "id": "6",
+      "Name": "Denmark",
+      "Image": "https://wallpapercave.com/dwp2x/wp4918177.jpg",
+      "Cities": [
+        {
+          "id": "22",
+          "Name": "Coastal Town",
+          "Image": "https://www.touropia.com/gfx/d/best-places-to-visit-in-denmark/gilleleje.jpg"
+        },
+        {
+          "id": "23",
+          "Name": "Elsinore",
+          "Image": "https://th.bing.com/th/id/OIP.7V_jmIzhxd4SnR_VooaxSQHaFZ?rs=1&pid=ImgDetMain"
+        },
+
+        {
+          "id": "24",
+          "Name": "Roskilde",
+          "Image": "https://www.touropia.com/gfx/d/best-places-to-visit-in-denmark/elsinore.jpg"
+        },
+        {
+          "id": "25",
+          "Name": "Roskilde",
+          "Image": "https://www.touropia.com/gfx/d/best-places-to-visit-in-denmark/odense.jpg"
+        }
+      ]}
+
   ]
 }

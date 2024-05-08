@@ -1,19 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { programsAction } from '../../redux/slices/programsSlice';
+import { programsAction, programsHabitationAction } from '../../redux/slices/programsSlice';
 import SimpleBackdrop from '../spinner';
 import classes from '../../Styles/programStyle.module.css'
 import { Typography } from '@mui/material';
 import Program from './Program';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 const Programs = () => {
+    const { id } = useParams();
+
     const programs = useSelector((state) => state.programs.programs);
     const dispatch = useDispatch();
-
     useEffect(() => {
-        dispatch(programsAction())
-    }, [dispatch])
+        if(id) {
+            dispatch(programsHabitationAction(id));
+        } else {
+            dispatch(programsAction())
+        }
+    }, [dispatch, id]);
 
     console.log(programs);
 

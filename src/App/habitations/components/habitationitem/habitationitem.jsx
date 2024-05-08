@@ -1,6 +1,8 @@
 import React from 'react';
 import "./habitationitem.css"
+import { Link } from 'react-router-dom';
 const Habitationitem = ({item}) => {
+    console.log(item)
     return (
         <div className='d-flex flex-column align-items-center'>
         <div class="grid w-100 p-3">
@@ -15,7 +17,10 @@ const Habitationitem = ({item}) => {
         </figure>
       
     </div>
-    <div className='btn btn-dark w-50'>Programs</div>
+    <Link to={`/programs/${item.id}`} className='btn btn-dark w-50'>
+
+    <div >Programs</div>
+    </Link>
     </div>
     );
 }

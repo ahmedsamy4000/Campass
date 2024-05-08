@@ -10,6 +10,18 @@ export const programsAction = createAsyncThunk("programs/getAll", async () => {
         return [];
     }
 })
+export const programsHabitationAction = createAsyncThunk("programs/getByHabitationId", async (habitationId) => {
+    try {
+        const res = await axios.get(config.programsApi);
+        const filteredPrograms = res.data.filter(program => program.habitations.includes(parseInt(habitationId)));
+        return filteredPrograms;
+    } catch (error) {
+        console.error("Error fetching programs by habitation ID:", error);
+        return [];
+    }
+});
+
+
 
 const programSlice = createSlice({
     name: "programs",
@@ -25,6 +37,9 @@ const programSlice = createSlice({
 
         builder.addCase(programsAction.rejected, (state, action) => {
             state.loading = false;
+        })
+        builder.addCase(programsHabitationAction.fulfilled, (state, action) => {
+            state.programs = action.payload
         })
     }
 })

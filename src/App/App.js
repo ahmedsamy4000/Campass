@@ -44,6 +44,7 @@ function App() {
         {path:"/",element:<Layout></Layout>,errorElement:<NotFound></NotFound>, children:[
           {index:true, element:<Home></Home>},
           {path:"/programs",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
+          {path:"/programs/:id",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
           {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
           {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
           {path:"/booking/:id", element:<BookingPage></BookingPage>},
