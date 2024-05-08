@@ -23,9 +23,9 @@ export const paymentMethoAction=createAsyncThunk("paymentMethod",async (obj)=>{
                 description: obj.description,
                 quantity: "1"
             }
-          ]
-      }
-    );
+        ]
+    }
+);
     const orderId=orderResponse.data.id;
 
     const PaymentKeyResponse=await axios.post(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_PAYMENT_KEY}`,
@@ -34,7 +34,7 @@ export const paymentMethoAction=createAsyncThunk("paymentMethod",async (obj)=>{
         amount_cents:obj.amount,
         expiration:3600,
         order_id:orderId,
-        billing_data:obj.pillingData,
+        billing_data:obj.billing_data,
         currency: "EGP", 
         integration_id: process.env.REACT_APP_INTEGRATION_ID
 
@@ -43,8 +43,6 @@ export const paymentMethoAction=createAsyncThunk("paymentMethod",async (obj)=>{
 
      const key=PaymentKeyResponse.data.token;
 
-     console.log(authToken)
-     console.log(orderId)
      console.log(key);
      return key;
 })
