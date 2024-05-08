@@ -24,6 +24,7 @@ const Cities = () => {
   }
 
   return (
+    // <div className='body'>
        <main className="main">
       <section className="card-lg__container">
           <img src={country.Image} alt="Background" className="background-img" />
@@ -37,6 +38,7 @@ const Cities = () => {
         ))}
       </section>
     </main>
+    // </div>
   );
 };
 
