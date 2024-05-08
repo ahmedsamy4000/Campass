@@ -1,5 +1,5 @@
 .colourblock {
-    background: #369A7E;
+    background: #DFD0B8;
     /* width: 60%; */
     padding: 7% 20% 10% 20%;
     color: #fff;
@@ -25,6 +25,6 @@ p {
 .scallopup {
     height: 100px;
     width: 100%;
-    background: -webkit-gradient(radial, 50% 100%, 10, 50% 100%, 40, from(#369A7E), color-stop(0.49, #369A7E), color-stop(0.51, #fff), to(white));
+    background: -webkit-gradient(radial, 50% 100%, 10, 50% 100%, 40, from(#DFD0B8), color-stop(0.49, #DFD0B8), color-stop(0.51, #fff), to(white));
     -webkit-background-size: 49px 100%;
 }

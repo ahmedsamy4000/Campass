@@ -36,7 +36,7 @@ const Contactpage = () => {
     }
     return (
         <div id="background">
-            <div className='row w-100 p-0 m-0 h-100'>
+            <div className='row w-100 p-0 m-5 h-100'>
                 <div className='col-8 d-flex flex-column'>
                     <div className='d-flex align-items-center w-100'>
                         <label className='mb-4' id="campasslabel">Campass</label>

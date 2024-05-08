@@ -14,7 +14,7 @@ const Countries = () => {
   console.log(countries);
 
   return (
-    <div className="container">
+    <div className="container" style={{marginTop:"80px"}}>
       <div className="col text-center"> 
         <h2>Let's explore the Countries</h2> 
       </div>

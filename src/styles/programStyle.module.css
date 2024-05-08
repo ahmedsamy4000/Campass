@@ -3,7 +3,7 @@
     background-image: url("/public/two-tents-field-with-word-nike-t.jpg");
     background-size: cover;
     background-position:  25% 75%;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 }
 
 .discover {
