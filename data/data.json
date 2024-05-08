@@ -73,6 +73,7 @@
       "habitations": [
         1
       ],
+      "isPending": false,
       "totalReservations": 0,
       "rate": 0,
       "image": "https://cdn.kimkim.com/files/a/images/a426c671c2ca249a820a66a41278162fa111dac7/big-8677d5f5983586f9fdc730ed57d8c81b.jpg",
@@ -96,6 +97,7 @@
         1,
         2
       ],
+      "isPending": false,
       "totalReservations": 50,
       "rate": 4,
       "image": "https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/282853/2000x2000-0-70-18e4ff27dec701ac6350d1e751c554bb.jpg",
@@ -120,6 +122,7 @@
         3,
         6
       ],
+      "isPending": false,
       "totalReservations": 200,
       "rate": 3.5,
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Marina_egypt_haddara.jpg",
@@ -145,6 +148,7 @@
         2,
         3
       ],
+      "isPending": false,
       "totalReservations": 150,
       "rate": 5,
       "image": "https://media.cnn.com/api/v1/images/stellar/prod/200611101955-01-egypt-dahab.jpg?q=w_1600,h_900,x_0,y_0,c_fill",
@@ -168,6 +172,7 @@
         2,
         4
       ],
+      "isPending": false,
       "totalReservations": 20,
       "rate": 3,
       "image": "https://thepublicflow.com/wp-content/uploads/2023/04/L.jpeg",
@@ -190,6 +195,7 @@
         1,
         5
       ],
+      "isPending": false,
       "totalReservations": 30,
       "rate": 2,
       "image": "https://images.locationscout.net/2020/03/the-read-sea-saudi-arabia-hrrc.jpg?h=1100&q=83",
@@ -213,10 +219,38 @@
         2,
         4
       ],
+      "isPending": false,
       "totalReservations": 70,
       "rate": 5,
       "image": "https://www.visitsaudi.com/content/dam/saudi-tourism/media/diriyah-articles/turaif-district-diryah.jpg",
       "description": "Embarks on an extraordinary journey into the heart of Saudi Arabia's vast desert landscape, where the golden sands stretch as far as the eye can see, and time seems to stand still. Hafawah, a hidden oasis nestled amidst the dunes, offers a sanctuary of tranquility and natural beauty, inviting travelers to escape the hustle and bustle of city life and reconnect with the rhythms of the desert."
+    },
+    {
+      "id": "ed6c",
+      "programName": "Program12222",
+      "countryName": "Brazil",
+      "companyID": "65fd",
+      "cities": [
+        {
+          "id": "5",
+          "Name": "Rio de Janeiro",
+          "Image": "https://www.touropia.com/gfx/b/2018/06/rio_de_janeiro.jpg"
+        }
+      ],
+      "transportationType": "Bus",
+      "duration": "5",
+      "budget": "12",
+      "discount": "12",
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?q=80&w=2610&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "anything",
+      "isPending": true,
+      "date": "2024-05-10",
+      "rate": 0,
+      "totalReservations": 0
     }
   ],
   "feedbacks": [

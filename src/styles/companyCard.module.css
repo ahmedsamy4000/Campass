@@ -4,7 +4,7 @@
     --clr-accent-400: #7C782F;
 }
 
-*,
+/* *,
 *::before,
 *::after {
     box-sizing: border-box;
@@ -18,14 +18,14 @@ body {
     background: var(--clr-neutral-900);
     font-family: sans-serif;
     padding-right: 15em;
-}
+} */
 
 .card {
     color: var(--clr-neutral-100);
     /* background-image: url(https://cdn.kimkim.com/files/a/images/a426c671c2ca249a820a66a41278162fa111dac7/big-8677d5f5983586f9fdc730ed57d8c81b.jpg); */
     background-size: cover;
     padding: 10rem 0 0;
-    max-width: 50ch;
+    width: 400px;
     height: 600px;
     border-radius: 0.5rem;
     overflow: hidden;

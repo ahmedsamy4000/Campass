@@ -10,6 +10,14 @@ export const programsAction = createAsyncThunk("programs/getAll", async () => {
         return [];
     }
 })
+export const programActionByID = createAsyncThunk("programs/getProgram", async (id) => {
+    try {
+        const res = await axios.get(config.programsApi+`/${id}`);
+        return res.data;
+    } catch (error) {
+        return [];
+    }
+})
 export const programsHabitationAction = createAsyncThunk("programs/getByHabitationId", async (habitationId) => {
     try {
         const res = await axios.get(config.programsApi);
@@ -25,7 +33,7 @@ export const programsHabitationAction = createAsyncThunk("programs/getByHabitati
 
 const programSlice = createSlice({
     name: "programs",
-    initialState: {programs: [], loading: false},
+    initialState: {programs: [], loading: false, program: {}},
     extraReducers:(builder) => {
         builder.addCase(programsAction.fulfilled, (state, action) => {
             state.programs = action.payload
@@ -40,6 +48,10 @@ const programSlice = createSlice({
         })
         builder.addCase(programsHabitationAction.fulfilled, (state, action) => {
             state.programs = action.payload
+        })
+
+        builder.addCase(programActionByID.fulfilled, (state, action) => {
+            state.program = action.payload
         })
     }
 })

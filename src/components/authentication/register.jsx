@@ -137,7 +137,6 @@ const Register = () => {
             obj.phone = "Phone is required";
         if (!user.type)
             obj.type = "Type is required";
-        setErrors({ ...errors, type: "Type is required" });
         if (!user.password)
             obj.password = "Password is required";
         if (!confirmPassword)

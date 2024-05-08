@@ -1,11 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import config from "../../config.json"
 export const habitationsAction=createAsyncThunk("habitations/getAll",async ()=>{
     try{
         const res=await axios.get("http://localhost:8000/habitations");
         const data=res.data;
-        console.log(data);
         return data;    
     }catch(error){
         return [];

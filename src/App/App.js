@@ -21,63 +21,68 @@ import Cities from '../components/Cities/Cities.jsx';
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
 const LoginPage = lazy(() => import('../Pages/LoginPage.jsx'));
-const HabitationsPage=lazy(()=>import('./habitations/habitationsPage.jsx'))
+const HabitationsPage = lazy(() => import('./habitations/habitationsPage.jsx'))
 const RegisterPage = lazy(() => import('../Pages/RegisterPage.jsx'));
-const Home = lazy(()=>import('../Pages/Home.jsx'));
-const ProgramsAnalysisPage = lazy(()=> import('../Pages/programsAnalysisPage.jsx'));
+const Home = lazy(() => import('../Pages/Home.jsx'));
+const ProgramsAnalysisPage = lazy(() => import('../Pages/programsAnalysisPage.jsx'));
 const CompanyPage = lazy(() => import('../Pages/CompanyPage.jsx'));
 const AboutUs = lazy(() => import('../Pages/AboutUs.jsx'));
-const Feedback = lazy(()=>import('../components/Feedbacks/Feedbacks.jsx'));
-const Layout = lazy(()=>import('../components/Home/Layout.jsx'));
-const Countries = lazy(()=>import('../components/Countries/Countries.jsx'));
-const ReservationsPage = lazy(()=>import('../Pages/ReservationsPage.jsx'));
+const Feedback = lazy(() => import('../components/Feedbacks/Feedbacks.jsx'));
+const Layout = lazy(() => import('../components/Home/Layout.jsx'));
+const Countries = lazy(() => import('../components/Countries/Countries.jsx'));
+const ReservationsPage = lazy(() => import('../Pages/ReservationsPage.jsx'));
+const AddProgram = lazy(() => import('../components/Company/AddProgram.jsx'));
+const UpdateProgram = lazy(() => import('../components/Company/UpdateProgram.jsx'));
 
-const NotFound = lazy(()=>import('../Pages/NotFound.jsx'))
-const Error = lazy(()=>import('../Pages/Error.jsx'))
+const NotFound = lazy(() => import('../Pages/NotFound.jsx'))
+const Error = lazy(() => import('../Pages/Error.jsx'))
 
 
 function App() {
-  const router=createBrowserRouter([
+  const router = createBrowserRouter([
     //{
-      // path:"/",element:<Layout></Layout>,children:[
-        // {index:true,element:<Home></Home> ,errorElement:<NotFound></NotFound>},
-        {path:"/",element:<Layout></Layout>,errorElement:<NotFound></NotFound>, children:[
-          {index:true, element:<Home></Home>},
-          {path:"/programs",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
-          {path:"/programs/:id",element:<Programs></Programs>,errorElement:<NotFound></NotFound>},
-          {path:"/contact",element:<Contactpage></Contactpage>,errorElement:<NotFound></NotFound>},
-          {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
-          {path:"/booking/:id", element:<BookingPage></BookingPage>},
-          {path:"/feedbacks", element:<Feedback></Feedback>},
-          {path:"/countries", element:<Countries></Countries>},
-          {path:"/countries/:countryId", element:<Cities></Cities>},
-
-          { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
-          { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
-        ]},
-        { path: "/signin", element: <AuthProtected><LoginPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
-        { path: "/signup", element: <AuthProtected><RegisterPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
-        {path:"/habitations",element:<HabitationsPage></HabitationsPage>},
-        {path:"/booking/:id", element:<BookingPage></BookingPage>},       
-        {path:"/analysis", element:<ProgramsAnalysisPage></ProgramsAnalysisPage>},
+    // path:"/",element:<Layout></Layout>,children:[
+    // {index:true,element:<Home></Home> ,errorElement:<NotFound></NotFound>},
+    {
+      path: "/", element: <Layout></Layout>, errorElement: <NotFound></NotFound>, children: [
+        { index: true, element: <Home></Home> },
+        { path: "/programs", element: <Programs></Programs>, errorElement: <NotFound></NotFound> },
+        { path: "/programs/:id", element: <Programs></Programs>, errorElement: <NotFound></NotFound> },
+        { path: "/contact", element: <Contactpage></Contactpage>, errorElement: <NotFound></NotFound> },
+        { path: "/habitations", element: <HabitationsPage></HabitationsPage> },
+        { path: "/booking/:id", element: <BookingPage></BookingPage> },
+        { path: "/feedbacks", element: <Feedback></Feedback> },
+        { path: "/countries", element: <Countries></Countries> },
+        { path: "/countries/:countryId", element: <Cities></Cities> },
         { path: "/company/programs", element: <CompanyPage></CompanyPage>, errorElement: <NotFound></NotFound> },
-        {path:"*",element:<Error></Error>}
-      //]
+        { path: "/company/programs/add", element: <AddProgram></AddProgram> },
+        { path: "/company/programs/:id", element: <UpdateProgram></UpdateProgram> },
+        { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
+        { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
+      ]
+    },
+    { path: "/signin", element: <AuthProtected><LoginPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
+    { path: "/signup", element: <AuthProtected><RegisterPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
+    { path: "/habitations", element: <HabitationsPage></HabitationsPage> },
+    { path: "/booking/:id", element: <BookingPage></BookingPage> },
+    { path: "/analysis", element: <ProgramsAnalysisPage></ProgramsAnalysisPage> },
+    { path: "*", element: <Error></Error> }
+    //]
     //}
-    
+
   ])
   return (
     <Suspense fallback={<SimpleBackdrop />}>
-    <GoogleOAuthProvider clientId='715821146371-ld1t66j0b5nc63hin96603jcia3p8k5f.apps.googleusercontent.com'>
-      <Provider store={store}>
+      <GoogleOAuthProvider clientId='715821146371-ld1t66j0b5nc63hin96603jcia3p8k5f.apps.googleusercontent.com'>
+        <Provider store={store}>
 
-        <RouterProvider router={router}></RouterProvider>
+          <RouterProvider router={router}></RouterProvider>
 
-        {/* <Programs></Programs> */}
-        {/* <Contactpage></Contactpage> */}
-      </Provider>
-    </GoogleOAuthProvider>
-  </Suspense>
+          {/* <Programs></Programs> */}
+          {/* <Contactpage></Contactpage> */}
+        </Provider>
+      </GoogleOAuthProvider>
+    </Suspense>
   );
 }
 

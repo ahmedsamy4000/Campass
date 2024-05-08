@@ -20,7 +20,6 @@ const countriesSlice = createSlice({
         builder.addCase(countriesAction.fulfilled, (state, action) => {
             state.countries = action.payload;
             state.loading = false;
-            console.log("done")
         });
         builder.addCase(countriesAction.pending, (state, action) => {
             state.loading = true;
