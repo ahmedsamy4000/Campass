@@ -17,6 +17,7 @@ import BookingPage from './Booking/bookingPage.jsx';
 import SimpleBackdrop from '../components/spinner.jsx';
 import AuthProtected from '../components/Guards/AuthProtected.jsx'
 import Cities from '../components/Cities/Cities.jsx';
+import ManagePrograms from '../components/Admin/ManagePrograms/ManagePrograms.jsx';
 
 const Programs = lazy(() => import('../components/programs/Programs'));
 const Contactpage = lazy(() => import('./contact/page/contactpage'));
@@ -60,6 +61,7 @@ function App() {
         { path: "/company/programs/:id", element: <UpdateProgram></UpdateProgram> },
         { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
         { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
+        { path: "/acceptprogram", element: <ManagePrograms/> },
       ]
     },
     { path: "/signin", element: <AuthProtected><LoginPage /></AuthProtected>, errorElement: <NotFound></NotFound> },

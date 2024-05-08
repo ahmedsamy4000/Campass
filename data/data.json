@@ -226,29 +226,28 @@
       "description": "Embarks on an extraordinary journey into the heart of Saudi Arabia's vast desert landscape, where the golden sands stretch as far as the eye can see, and time seems to stand still. Hafawah, a hidden oasis nestled amidst the dunes, offers a sanctuary of tranquility and natural beauty, inviting travelers to escape the hustle and bustle of city life and reconnect with the rhythms of the desert."
     },
     {
-      "id": "ed6c",
-      "programName": "Program12222",
-      "countryName": "Brazil",
+      "id": "f212",
+      "programName": "doha program",
+      "countryName": "Saudi Arabia",
       "companyID": "65fd",
       "cities": [
         {
-          "id": "5",
-          "Name": "Rio de Janeiro",
-          "Image": "https://www.touropia.com/gfx/b/2018/06/rio_de_janeiro.jpg"
+          "id": "10",
+          "Name": "Riyadh",
+          "Image": "https://i.pinimg.com/564x/38/1d/5b/381d5b39f4cf982d3bc779463073b0b1.jpg"
         }
       ],
-      "transportationType": "Bus",
+      "transportationType": "Train",
       "duration": "5",
-      "budget": "12",
-      "discount": "12",
+      "budget": "10000",
+      "discount": "3",
       "habitations": [
-        "1",
         "2"
       ],
-      "image": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?q=80&w=2610&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "description": "anything",
+      "image": "https://th.bing.com/th/id/R.892bb645c09c766efcc5bc4d0c93094a?rik=slmcvUaa5yToAw&riu=http%3a%2f%2fwww.wallpapers13.com%2fwp-content%2fuploads%2f2015%2f12%2fNature-Lake-Bled.-Desktop-background-image.jpg&ehk=c2raFC95S12P3OL0%2fwdM60ro3oUxsSEajkuGEN%2fsjbo%3d&risl=1&pid=ImgRaw&r=0",
+      "description": "dohaaaaaaaaaaaaaaaaaaaaaaaa",
       "isPending": true,
-      "date": "2024-05-10",
+      "date": "2024-05-08",
       "rate": 0,
       "totalReservations": 0
     }

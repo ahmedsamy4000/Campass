@@ -19,7 +19,7 @@ const CompanyPrograms = () => {
         dispatch(userActionByEmail(localStorage.getItem('email')));
     }, [dispatch]);
     useEffect(() => {
-        setProgams(data.filter(p => p.companyID === user.id && p.isPending === false));
+        setProgams(data.filter(p => p.companyID === user.id && p.isPending === true));
     }, [data, user]);
     const handleAddClick = () => navigate('/company/programs/add');
     if (programs) {
