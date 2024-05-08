@@ -21,8 +21,8 @@ const Program = (program) => {
                         </div>
                     </div>
                     <div className={classes['card-back']} style={{backgroundImage:`url(${program.image})`}}>
-                        <div className={classes.frontInner}>
-                        <div className='mx-5 auto'>
+                        <div className={`${classes.frontInner} d-flex flex-column`}>
+                        <div className='mx-5 auto '>
                             <div className='mb-3'>
                             <Typography variant="p" gutterBottom sx={{color:"white", fontWeight:"bold"}}>
                                 {program.description}

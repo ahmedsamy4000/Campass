@@ -11,7 +11,7 @@ const PriceList = () => {
 
      useEffect( () => {
         dispatch(programsAction())
-    })
+    },[])
     if(!programs) return <div>Loading</div>
     return (
         <>
