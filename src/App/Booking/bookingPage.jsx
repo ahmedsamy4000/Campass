@@ -73,6 +73,7 @@ const BookingPage = () => {
             })).then((key)=>{
                 navigateToPaymentPage(key.payload);
             })
+            
         }
 
     }
@@ -119,12 +120,6 @@ const BookingPage = () => {
                     <label id="budget">Total Budget : {totalPrice} </label>
                     <div className='w-25 btn btn-light mt-3' type="button" onClick={confirmPayment}>Confirm</div>
                 </div>
-
-
-
-
-
-
             </div>
         )
 
