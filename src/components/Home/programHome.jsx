@@ -10,7 +10,7 @@ const ProgramHome = (program) => {
         navigatTo(`/booking/${program.id}`,);
     }
     return (
-        <Col sm={6} md={4}>
+        <Col sm={5} md={3} style={{marginLeft:"70px"}}>
             <div className={classes.card}>
                 <div className={`${classes.imgCard} mt-4`}>
                     <div className={classes.inner} style={{backgroundImage:`url(${program.image})`}}>

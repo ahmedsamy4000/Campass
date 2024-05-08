@@ -2,9 +2,8 @@ import { Grid, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { programsAction } from '../../redux/slices/programsSlice';
-import Program from '../programs/Program';
 import homeClass from '../../Styles/Home.module.css';
-import { Container, Row } from 'react-bootstrap';
+import ProgramHome from './programHome';
 const RecentlyPrograms = () => {
     const programs = useSelector((state) => state.programs.programs);
     const dispatch = useDispatch();
@@ -15,19 +14,11 @@ const RecentlyPrograms = () => {
     return (
         <>
         <Grid md={12}>
-        <Typography variant="h3" component="h2" className={homeClass.welcome} style={{margin:"40px",marginTop:"110px"}}>
+        <Typography variant="h3" component="h2" className={homeClass.welcome} style={{margin:"40px",marginTop:"110px",fontSize:"50pt"}}>
                     Recent Programs
             </Typography>
         </Grid>
-        <Container>
-            <Row>
-                <Program {...programs[0]}></Program>
-                <Program {...programs[1]}></Program>
-                <Program {...programs[2]}></Program>
-            </Row>
-        </Container>
-            
-        
+        {programs.slice(0, 3).map((item, idx) => <ProgramHome key={idx} {...item}></ProgramHome>)}
         </>
     );
 }

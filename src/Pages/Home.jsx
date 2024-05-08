@@ -4,6 +4,10 @@ import { Grid } from '@mui/material';
 import RecentlyPrograms from '../components/Home/RecentlyPrograms';
 import { useDispatch, useSelector } from 'react-redux';
 import { authRequestAction, orderRequestAction, paymentKeyRequestAction, paymentMethoAction } from '../redux/slices/paymentSlice';
+import Experience from '../components/Home/Experience';
+import Countries from '../components/Countries/Countries';
+import { CountriesHome } from '../components/Home/Countries';
+import PriceList from '../components/Home/PriceList';
 
 const Home = () => {
     // const token=useSelector((state)=>state.payments.token);
@@ -34,9 +38,12 @@ const Home = () => {
     // },[]);
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} display={"flex"} justifyContent={"center"}>
             <Intro></Intro>
             <RecentlyPrograms></RecentlyPrograms>
+            <Experience></Experience>
+            <CountriesHome></CountriesHome>
+            <PriceList></PriceList>
         </Grid>
     );
 }
