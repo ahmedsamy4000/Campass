@@ -7,6 +7,7 @@ import "./habitationsPage.css";
 import CoverItem from './components/coverItem/coverItem';
 import Habitationitem from './components/habitationitem/habitationitem';
 import { Grid, Grow } from '@mui/material';
+import { Height } from '@mui/icons-material';
 
 const HabitationsPage = () => {
   const habitations = useSelector((state) => state.habitations.habitations);

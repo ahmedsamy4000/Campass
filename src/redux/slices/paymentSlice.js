@@ -46,62 +46,19 @@ export const paymentMethoAction=createAsyncThunk("paymentMethod",async (obj)=>{
      console.log(authToken)
      console.log(orderId)
      console.log(key);
+     return key;
 })
 
-
-// export const authRequestAction=createAsyncThunk("payments/getAll",async ()=>{
-//     console.log(process.env.REACT_APP_API_KEY);
-//     const res=await axios.post(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_AUTH_REQUEST}`,
-//     {
-//         api_key:`${process.env.REACT_APP_API_KEY}`
-//     }
-//     );
-//     const data=res.data;
-//     return data.token;    
-// })
-
-// export const orderRequestAction=createAsyncThunk("Orderpayments/getAll",async (obj)=>{
-//     console.log(obj);
-//     const res=await axios.post(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_ORDER}`,
-//     {
-//         auth_token:obj.token,
-//         delivery_needed: "false",
-//         amount_cents: `${obj.totalPrice*100}`,
-//         currency: "EGP",
-//         items: [
-//             {
-//                 name:obj.programName,
-//                 amount_cents:obj.amount+'',
-//                 description: obj.description,
-//                 quantity: "1"
-//             }
-//           ]
-//       }
-//     );
-//     console.log(res);
-//     const data=res.data;
-//     return data.id;    
-// });
-
-// export const paymentKeyRequestAction=createAsyncThunk("paymentsKey/getAll",async (obj)=>{
-//     console.log(obj);
-//     const res=await axios.post(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_PAYMENT_KEY}`,
-//    obj
-//     );
-//     console.log(res);
-//     const data=res.data;
-//     return data.id;    
-// });
 
 
 
 const paymentSlice=createSlice({
     name:"payments",
-    initialState:{payments:[],token:"",loading:false},
+    initialState:{payments:[],key:"",loading:false},
     extraReducers:(builder)=>{
         ///////////////////////////////AUTHTOKEN///////////////////////
         builder.addCase(paymentMethoAction.fulfilled,(state,action)=>{
-            state.token=action.payload;
+            state.key=action.payload;
         })
         builder.addCase(paymentMethoAction.pending,(state,action)=>{
             state.loading=true;
