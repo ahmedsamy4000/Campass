@@ -227,7 +227,7 @@
     },
     {
       "id": "796e",
-      "programName": "Program123",
+      "programName": "Tropical Tranquility: Exploring the Maldives' Island Paradise",
       "countryName": "Maldives",
       "companyID": "65fd",
       "cities": [
@@ -236,19 +236,213 @@
       ],
       "transportationType": "Plane",
       "duration": 12,
-      "budget": 12,
+      "budget": 22000,
       "discount": 0,
       "habitations": [
         "1",
         "6"
       ],
       "image": "https://images.unsplash.com/photo-1537905569824-f89f14cceb68?q=80&w=2604&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "description": "anything",
+      "description": "This program offers a curated experience of relaxation, adventure, and romance, with opportunities for snorkeling in crystal-clear waters, lounging on white sandy beaches, and savoring exquisite cuisine in overwater bungalows",
       "isPending": true,
       "date": "2024-05-18",
       "rate": 0,
       "totalReservations": 0
+    },
+    {
+      "id": "8",
+      "programName": "Sacred Pilgrimage: Journey to Mecca's Spiritual Heart",
+      "countryName": "Saudi Arabia",
+      "companyID": "65fd",
+      "cities": [
+        "Mecca"
+      ],
+      "transportationType": "Plane",
+      "duration": 12,
+      "budget": 12000,
+      "discount": 0,
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1513072064285-240f87fa81e8?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Offers a transformative experience for pilgrims seeking to embark on the revered Hajj or Umrah journey. This program provides comprehensive support and guidance for travelers, ensuring a smooth and spiritually enriching pilgrimage to the holiest city in Islam",
+      "isPending": true,
+      "date": "2024-05-18",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "9",
+      "programName": "Samba Rhythms: Exploring the Vibrant Soul of Rio de Janeiro",
+      "countryName": "Brazil",
+      "companyID": "65fd",
+      "cities": [
+        "Rio de Janeiro"
+      ],
+      "transportationType": "Plane",
+      "duration": 8,
+      "budget": 12000,
+      "discount": 0,
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "From the sun-kissed shores of Copacabana to the vibrant streets of Lapa, this program offers a kaleidoscope of experiences, including exploring historic landmarks, indulging in delectable cuisine, and dancing to the captivating beat of samba music. Whether marveling at the breathtaking views from Sugarloaf Mountain or joining in the festivities of Carnival, this journey promises an unforgettable adventure in the heart of Rio de Janeiro's exuberant spirit.",
+      "isPending": true,
+      "date": "2024-05-18",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "10",
+      "programName": "Sun-Kissed Serenity: Exploring Natal's Coastal Charms",
+      "countryName": "Brazil",
+      "companyID": "65fd",
+      "cities": [
+        "Natal"
+      ],
+      "transportationType": "Plane",
+      "duration": 8,
+      "budget": 12000,
+      "discount": 0,
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1515898034510-821b204966e4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This program invites travelers to discover the natural beauty and cultural delights of this vibrant city, known for its stunning beaches, towering sand dunes, and lively atmosphere. From thrilling buggy rides along the iconic Genipabu dunes to leisurely strolls along the Ponta Negra beach promenade, this expedition offers a perfect blend of relaxation and adventure",
+      "isPending": true,
+      "date": "2024-05-18",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "10",
+      "programName": "Iguassu Falls Adventure: Exploring the Natural Wonders of Foz do Iguacu",
+      "countryName": "Brazil",
+      "companyID": "65fd",
+      "cities": [
+        "Foz do Iguacu"
+      ],
+      "transportationType": "Plane",
+      "duration": 8,
+      "budget": 12000,
+      "discount": 0,
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1656288227038-28aaa4f6b8ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "From the thundering cascades of Iguassu Falls to the lush rainforests of the surrounding national parks, this program offers an immersive experience in the heart of Brazil's biodiversity hotspot.",
+      "isPending": true,
+      "date": "2024-05-18",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "12",
+      "programName": "Salvador Rhythms: Immersing in the Cultural Heartbeat of Brazil",
+      "countryName": "Brazil",
+      "companyID": "65fd",
+      "cities": [
+        "Salvador"
+      ],
+      "transportationType": "Plane",
+      "duration": 8,
+      "budget": 12000,
+      "discount": 0,
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1640884216864-b26b780ff102?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "This program offers travelers an immersive experience in the rich tapestry of Afro-Brazilian culture, from the rhythmic beats of the capoeira roda to the colorful expressions of Bahian cuisine and art.",
+      "isPending": true,
+      "date": "2024-05-18",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "13",
+      "programName": "Maldivian Dreams: Exploring Fuvahmulah and Maafushi's Island Charms",
+      "countryName": "Maldives",
+      "companyID": "65fd",
+      "cities": [
+        "Fuvahmulah",
+        "Maafushi"
+      ],
+      "transportationType": "Plane",
+      "duration": 8,
+      "budget": 40000,
+      "discount": 20,
+      "habitations": [
+        "1",
+        "2"
+      ],
+      "image": "https://images.unsplash.com/photo-1542641734-3b824eaabad0?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Begin your adventure in Fuvahmulah, a unique atoll known for its diverse ecosystems, including lush greenery, pristine beaches, and serene freshwater lakes. Dive into the crystal-clear waters to discover vibrant coral reefs teeming with marine life, or wander through the island's villages to experience authentic Maldivian hospitality",
+      "isPending": true,
+      "date": "2024-06-18",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "14",
+      "programName": "Island Odyssey: Exploring Indonesia's Diverse Archipelago",
+      "countryName": "Indonesia",
+      "companyID": "65fd",
+      "cities": [
+        "Ubud",
+        "Jakarta",
+        "Jayapura",
+        "Banda Aceh",
+        "Bukittinggi"
+      ],
+      "transportationType": "Plane",
+      "duration": 30,
+      "budget": 30000,
+      "discount": 5,
+      "habitations": [
+        "1",
+        "2",
+        "6"
+      ],
+      "image": "https://images.unsplash.com/photo-1557093793-d149a38a1be8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Continue your exploration to Java, home to majestic volcanoes, UNESCO World Heritage sites, and bustling cities. Marvel at the awe-inspiring temples of Borobudur and Prambanan, and delve into the rich history and culture of Indonesia's most populous island",
+      "isPending": true,
+      "date": "2024-06-01",
+      "rate": 0,
+      "totalReservations": 0
+    },
+    {
+      "id": "15",
+      "programName": "Nordic Discovery: Exploring Denmark's Cultural Delights",
+      "countryName": "Denmark",
+      "companyID": "65fd",
+      "cities": [
+        "Coastal Town",
+        "Elsinore",
+        "Roskilde"
+      ],
+      "transportationType": "Plane",
+      "duration": 20,
+      "budget": 35000,
+      "discount": 5,
+      "habitations": [
+        "1",
+        "2",
+        "6"
+      ],
+      "image": "https://images.unsplash.com/photo-1567106913018-db776ba7c595?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Immerse yourself in Danish culture and traditions as you sample local delicacies such as smørrebrød (open-faced sandwiches), Danish pastries, and delicious seafood dishes. Experience the warmth and hospitality of the Danish people as you explore historic towns, charming countryside, and scenic coastal areas.",
+      "isPending": true,
+      "date": "2024-07-01",
+      "rate": 0,
+      "totalReservations": 0
     }
+    
   ],
   "feedbacks": [
     {
@@ -357,22 +551,22 @@
       "Cities": [
         {
           "id": "0",
-          "Name": "Louxor",
+          "Name": "Luxor",
           "Image": "https://i.pinimg.com/564x/bc/46/50/bc4650f5239a5b046b896cf485660ff3.jpg"
         },
         {
           "id": "1",
-          "Name": "Dahb",
+          "Name": "Dahab",
           "Image": "https://i.pinimg.com/474x/12/62/af/1262afbb91e9541b57ba32a00c081e25.jpg"
         },
         {
           "id": "2",
-          "Name": "Fayom",
+          "Name": "Fayoum",
           "Image": "https://i.pinimg.com/564x/68/cf/16/68cf16d2602f952a540ae137bee7fa5b.jpg"
         },
         {
           "id": "3",
-          "Name": "Alexandira",
+          "Name": "Alexandria",
           "Image": "https://i.pinimg.com/564x/5d/ea/55/5dea55925df68a81ebc99a9c55d0ed22.jpg"
         },
         {
@@ -431,13 +625,13 @@
         },
         {
           "id": "11",
-          "Name": "Madain Saleh",
-          "Image": "https://i.pinimg.com/474x/ee/59/7a/ee597a05ce151ab7e3030a661b403cee.jpg"
+          "Name": "Medina",
+          "Image": "https://www.otlaat.com/wp-content/uploads/2018/05/Mount-Uhud-.jpg"
         },
         {
           "id": "12",
-          "Name": "Al Bahah",
-          "Image": "https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/2023/04/mountains-5518787_1920-1024x576.jpg"
+          "Name": "Jeddah",
+          "Image": "https://i0.wp.com/www.agoda.com/wp-content/uploads/2019/05/Jeddah-landmarks-Corniche-Jeddah.jpg"
         }
       ]
     },
@@ -519,11 +713,6 @@
           "id": "24",
           "Name": "Roskilde",
           "Image": "https://www.touropia.com/gfx/d/best-places-to-visit-in-denmark/elsinore.jpg"
-        },
-        {
-          "id": "25",
-          "Name": "Roskilde",
-          "Image": "https://www.touropia.com/gfx/d/best-places-to-visit-in-denmark/odense.jpg"
         }
       ]
     }

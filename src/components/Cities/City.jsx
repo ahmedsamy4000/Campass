@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const City = ({city, country}) => {
   return (
     <div>
-      <Link to={`/Countries/${country}/${city.Name}/programs`}>
+      <Link to={`/Countries/${country}/${city.Name}/programs`} style={{textDecoration:"none"}}>
         <section className="card-sm" style={{ backgroundImage: `url(${city.Image})` }}>
           <h1 className="card__text-lg">{city.Name}</h1>
         </section>    
