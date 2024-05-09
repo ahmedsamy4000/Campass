@@ -56,7 +56,7 @@ function App() {
         { path: "/countries", element: <Countries></Countries> },
         { path: "/countries/:countryId", element: <Cities></Cities> },
         { path: "/search/:search", element: <Countries></Countries> },
-        {path:"/Countries/:countryId/:cityName/programs", element: <Programs></Programs>},
+        { path:"/Countries/:countryId/:cityName/programs", element: <Programs></Programs>},
         { path: "/company/programs", element: <CompanyPage></CompanyPage>, errorElement: <NotFound></NotFound> },
         { path: "/company/programs/add", element: <AddProgram></AddProgram> },
         { path: "/company/programs/:id", element: <UpdateProgram></UpdateProgram> },
@@ -64,13 +64,14 @@ function App() {
         { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
         { path: "/userReservations", element: <UserReservations></UserReservations>, errorElement: <NotFound></NotFound> },
         { path: "/acceptprogram", element: <ManagePrograms/> },
+        { path: "/analysis", element: <ProgramsAnalysisPage></ProgramsAnalysisPage> },
       ]
     },
     { path: "/signin", element: <AuthProtected><LoginPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
     { path: "/signup", element: <AuthProtected><RegisterPage /></AuthProtected>, errorElement: <NotFound></NotFound> },
     { path: "/habitations", element: <HabitationsPage></HabitationsPage> },
     { path: "/booking/:id", element: <BookingPage></BookingPage> },
-    { path: "/analysis", element: <ProgramsAnalysisPage></ProgramsAnalysisPage> },
+    
     { path: "*", element: <Error></Error> }
     //]
     //}
