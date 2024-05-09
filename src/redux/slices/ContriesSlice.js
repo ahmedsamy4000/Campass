@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const CountryByIdAction = createAsyncThunk("countries/getById", async (countryId) => {
-    const res = await axios.get(`http://localhost:8000/Countries/${countryId}`);
+    const res = await axios.get(`https://campass-json-server.onrender.com/Countries/${countryId}`);
     const data = res.data;
     return data;    
 });
 
 export const countriesAction = createAsyncThunk("countries/getAll", async () => {
-    const res = await axios.get("http://localhost:8000/Countries");
+    const res = await axios.get("https://campass-json-server.onrender.com/Countries");
     const data = res.data;
     return data;    
 });

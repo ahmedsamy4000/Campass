@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 export const habitationsAction=createAsyncThunk("habitations/getAll",async ()=>{
     try{
-        const res=await axios.get("http://localhost:8000/habitations");
+        const res=await axios.get("https://campass-json-server.onrender.com/habitations");
         const data=res.data;
         return data;    
     }catch(error){
@@ -13,7 +13,7 @@ export const habitationsAction=createAsyncThunk("habitations/getAll",async ()=>{
 
 export const habitationsActionById = createAsyncThunk("habitations/gethabitation",async (habitationId)=>{
     try{
-        const res=await axios.get("http://localhost:8000/habitations"+`/${habitationId}`);
+        const res=await axios.get("https://campass-json-server.onrender.com/habitations"+`/${habitationId}`);
         const data=res.data;
         return data;    
     }catch(error){

@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const feedBacksAction=createAsyncThunk("feedbacks/getAll",async ()=>{
-    const res=await axios.get("http://localhost:8000/feedbacks");
+    const res=await axios.get("https://campass-json-server.onrender.com/feedbacks");
     const data=res.data;
     return data;    
 })
 
 export const addFeedBackAction=createAsyncThunk("feedbacks/add",async (feedback)=>{
-    const res=await axios.post("http://localhost:8000/feedbacks",feedback); 
+    const res=await axios.post("https://campass-json-server.onrender.com/feedbacks",feedback); 
     const data=res.data;
     return data;
 });
