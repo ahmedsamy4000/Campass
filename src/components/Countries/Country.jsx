@@ -8,9 +8,9 @@ const Country = (country) => {
         <div className="Container">
         <div className="wrapper">
             <div className="banner-image">
-            <img src= {country.Image}   ></img>
+            <img src= {country.Image}></img>
             </div>
-            <h2 className='text-white'>{country.Name}</h2>
+            <h2>{country.Name}</h2>
 
          </div>
          

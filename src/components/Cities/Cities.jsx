@@ -25,11 +25,11 @@ const Cities = () => {
 
   return (
     // <div className='body'>
-       <main className="main">
+       <main className="main text-white">
       <section className="card-lg__container">
           <img src={country.Image} alt="Background" className="background-img" />
-        <h1 className="font-weight-bold">Let's explore</h1>
-        <h1 className="font-weight-bold">{country.Name}</h1>
+        <h1 className="font-weight-bold" style={{fontSize:"50pt"}}>Let's explore</h1>
+        <h1 className="font-weight-bold"style={{fontSize:"50pt"}}>{country.Name}</h1>
       </section>
     
       <section className="card-sm__container">
