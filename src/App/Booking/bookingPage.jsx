@@ -119,7 +119,7 @@ const BookingPage = () => {
                     <label id="passengers"> Number of Passengers</label>
                     <input type="number" className="form-control w-25" value={passengersnum >= 0 ? passengersnum : 0} onChange={(e) => { setpassengersnum(Math.max(0, e.target.value)); }} id="exampleFormControlInput1" placeholder="Number Of Members" />
                     <label id="budget">Total Budget : {totalPrice} </label>
-                    <div className='w-25 btn btn-light mt-3' type="button" onClick={addReservation}>Confirm</div>
+                    <div className='w-25 btn btn-light mt-3' type="button" onClick={confirmPayment}>Confirm</div>
                 </div>
             </div>
         )

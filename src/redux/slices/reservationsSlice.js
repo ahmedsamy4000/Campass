@@ -20,7 +20,10 @@ export const GetUserReservation = createAsyncThunk("get/userReservation", async(
     return reservation;
 })
 export const DeleteReservation = createAsyncThunk("delete/reservation", async(ID)=>{
-    await axios.delete("https://campass-json-server.onrender.com/reservations/"+ID);
+
+  const res=  await axios.delete("https://campass-json-server.onrender.com/reservations/"+ID);
+  
+    return ID;
 })
 const reservationsSlice=createSlice({
     name:"reservations",
@@ -40,6 +43,11 @@ const reservationsSlice=createSlice({
             state.reservations=[];
         })
 
+
+        //////////////////////////////DELETE//////////////////////
+        builder.addCase(DeleteReservation.fulfilled,(state,action)=>{
+            state.userReservations=state.userReservations.filter((item)=>item.id!==action.payload);
+        })
         ///////////////////////////////POST///////////////////////
 
         builder.addCase(addreservationAction.fulfilled,(state,action)=>{
