@@ -48,6 +48,7 @@ const BookingPage = () => {
 
    
     const confirmPayment = () => {
+        addReservation();
        
         if (localStorage.getItem("email")) {
             dispatch(paymentMethoAction({
@@ -72,7 +73,6 @@ const BookingPage = () => {
                 },
             })).then((key)=>{
                 navigateToPaymentPage(key.payload);
-                addReservation();
             })
             
         }
