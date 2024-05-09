@@ -15,7 +15,7 @@ export const programActionByID = createAsyncThunk("programs/getProgram", async (
         const res = await axios.get(config.programsApi+`/${id}`);
         return res.data;
     } catch (error) {
-        return [];
+        return {};
     }
 })
 export const programsHabitationAction = createAsyncThunk("programs/getByHabitationId", async (habitationId) => {

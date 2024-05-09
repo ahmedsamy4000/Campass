@@ -4,21 +4,27 @@
     --clr-accent-400: #7C782F;
 }
 
-/* *,
-*::before,
-*::after {
-    box-sizing: border-box;
+.background{
+    height: 50vh;
+    background-size: cover;
+    background-position: 25% 75%;
+    -webkit-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+    z-index: 0;
+    border-radius: inherit;
+    background-image: url(https://images.pexels.com/photos/2582818/pexels-photo-2582818.jpeg);
 }
 
-body {
-    display: grid;
-    min-height: 100vh;
-    place-items: center;
-    line-height: 1.6;
-    background: var(--clr-neutral-900);
-    font-family: sans-serif;
-    padding-right: 15em;
-} */
+.con{
+    width:80%;
+    box-shadow: #A79277 0px 20px 30px -10px;
+    margin: 50px;
+    background-color: #F6F4E8;
+    border-radius: 30px;
+    padding: 20px;
+    margin: auto;
+}
+
 
 .card {
     color: var(--clr-neutral-100);

@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from '../../Styles/companyCard.module.css'
 import { Link } from 'react-router-dom';
 import { Stack } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { reservationsAction } from '../../redux/slices/reservationsSlice';
+import { Deleteprogram } from '../../redux/slices/programsSlice';
 
-const CompanyProgram = ({ programName, description, image, id }) => {
+const CompanyProgram = ({ programName, description, image, id, handleOpen }) => {
+    const reservations = useSelector(state => state.reservations.reservations);
+    const dispatch = useDispatch();
+    const [found, setFound] = useState(false);
+
+    useEffect(() => {
+        dispatch(reservationsAction());
+    }, [dispatch]);
+
+
+    const handleClick = (event) => {
+        event.preventDefault();
+        for (var res of reservations) {
+            if (res.programId === id)
+                setFound(true);
+        }
+        if (found)
+            handleOpen(id, found);
+        else
+        {
+            dispatch(Deleteprogram(id));
+            window.location.reload();
+        }
+    }
     return (
         <div>
             <div className={classes.card} style={{ backgroundImage: `url(${image})` }}>
@@ -14,15 +40,15 @@ const CompanyProgram = ({ programName, description, image, id }) => {
                             {description}
                         </p>
                         <Stack direction={"row"} justifyContent={"space-between"}>
-                        <Link to={'/reservations'} className={classes.button}>
+                            <Link to={`/reservations/${id}`} className={classes.button}>
                                 Reservations
                             </Link>
                             <Link to={`/company/programs/${id}`} className={classes.button}>
                                 Update
                             </Link>
-                            <Link to={'/'} className={classes.button}>
+                            <button className={classes.button} onClick={handleClick}>
                                 Delete
-                            </Link>
+                            </button>
                         </Stack>
                     </Stack>
                 </div>

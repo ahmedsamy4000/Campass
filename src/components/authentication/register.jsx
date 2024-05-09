@@ -48,7 +48,7 @@ const Register = () => {
                         toast.error("Email is already exist");
                     else {
                         axios.post("http://localhost:8000/users",
-                            { id: data.data.id, email: data.data.email, fName: data.data.given_name, lName: data.data.family_name, phone: "", password: "", type: "" }).then(() => {
+                            { id: data.data.id, email: data.data.email, fName: data.data.given_name, lName: data.data.family_name, phone: "", password: "", type: "Traveller" }).then(() => {
                                 localStorage.setItem('email', user.email);
                                 localStorage.setItem('type', user.type);
                                 dispatch(changeAuth(true));

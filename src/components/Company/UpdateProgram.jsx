@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { programActionByID } from '../../redux/slices/programsSlice';
-import { Box, Grid, MenuItem, Stack, TextField, Typography } from '@mui/material';
+import { Grid, MenuItem, Stack, TextField, Typography } from '@mui/material';
 import classes from '../../Styles/companyCard.module.css'
 import { countriesAction } from '../../redux/slices/ContriesSlice';
 import { MultiSelect } from 'primereact/multiselect';
@@ -46,7 +46,6 @@ const UpdateProgram = () => {
         setnewProgram(program);
         console.log(program);
         if (country) {
-            console.log(country.Cities);
             setCities(country.Cities);
         }
     }, [dispatch, program, countries])
@@ -54,14 +53,29 @@ const UpdateProgram = () => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (name === "countryName") {
-            setnewProgram({...newProgram, cities:[]})
+            console.log(name);
+            setnewProgram({ ...newProgram, cities: [] });
             const country = countries.find(c => c.Name === value);
             if (country) {
                 console.log(country.Cities);
                 setCities(country.Cities);
             }
+            setnewProgram({ ...newProgram, [name]: value });
         }
-        setnewProgram({ ...newProgram, [name]: value });
+        else if (name === 'duration') {
+            let d = value;
+            console.log(+d);
+            setnewProgram({ ...newProgram, duration: +d });
+        }
+        else if (name === 'budget') {
+            let b = value;
+            console.log(typeof +b);
+            setnewProgram({ ...newProgram, budget: +b });
+        }
+        else {
+            setnewProgram({ ...newProgram, [name]: value });
+        }
+        setErrors({ ...errors, [name]: '' });
     }
 
     const handleClick = (event) => {
@@ -89,7 +103,7 @@ const UpdateProgram = () => {
         if (newProgram.habitations.length === 0)
             obj.habitations = "Habitations is required";
         setErrors(obj);
-        if (newProgram.programName && newProgram.description && newProgram.countryName && newProgram.cities.length > 0 
+        if (newProgram.programName && newProgram.description && newProgram.countryName && newProgram.cities.length > 0
             && newProgram.date && newProgram.transportationType && newProgram.duration && newProgram.budget && newProgram.image
             && newProgram.discount && newProgram.habitations.length > 0
         ) {
@@ -104,219 +118,222 @@ const UpdateProgram = () => {
     }, [dispatch, id])
     if (program) {
         return (
-            <div style={{paddingTop: "100px", width: "100%", margin: "auto"}}>
-                <Box mx={20}>
-                    <Stack direction={"row"} justifyContent={"space-between"} mt={2} mx={3}>
-                        <Typography id="modal-modal-title" variant="h4" component="h2">
-                            Update Program
-                        </Typography>
-                    </Stack>
-                    <Stack direction={"column"} justifyContent={"center"} alignItems={"center"} p={2} spacing={{ md: 5, xs: 1 }}>
-                        <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField variant='standard' name='programName' value={newProgram.programName} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Program Name" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.programName}</Typography>
+            <div>
+                <div className={classes.background}>
+                </div>
+                <div style={{ paddingTop: "50px", width: "100%", margin: "auto" }}>
+                    <div className={classes.con}>
+                        <Stack direction={"row"} justifyContent={"space-between"} mt={2} mx={3}>
+                            <Typography id="modal-modal-title" variant="h4" component="h2">
+                                Update Program
+                            </Typography>
+                        </Stack>
+                        <Stack direction={"column"} justifyContent={"center"} alignItems={"center"} p={2} spacing={{ md: 5, xs: 1 }}>
+                            <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField variant='standard' name='programName' value={newProgram.programName} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Program Name" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.programName}</Typography>
+                                </Grid>
+                                <Grid item md={1} xs={12} width={"100%"}>
+                                </Grid>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField variant='standard' name='description' value={newProgram.description} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Description" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.description}</Typography>
+                                </Grid>
                             </Grid>
-                            <Grid item md={1} xs={12} width={"100%"}>
-                            </Grid>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField variant='standard' name='description' value={newProgram.description} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Description" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.description}</Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField
-                                    id="standard-select-country"
-                                    select
-                                    label="Country Name"
-                                    defaultValue=""
-                                    variant="standard"
-                                    name="countryName"
-                                    value={newProgram.countryName??""}
-                                    onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}>
-                                    {countries.map((option) => (
-                                        <MenuItem key={option.id} value={option.Name}>
-                                            {option.Name}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.countryName}</Typography>
-                            </Grid>
-                            <Grid item md={1} xs={12} width={"100%"}>
-                            </Grid>
-                            <Grid item md={5} xs={12}>
-                                {newProgram.countryName ? <div className="card flex justify-content-center">
-                                    <MultiSelect value={newProgram.cities} onChange={handleChange} options={cities} optionLabel="Name" name='cities' display="chip"
-                                        placeholder="Select Cities" maxSelectedLabels={3} className="w-full md:w-20rem" />
-                                </div> :
-                                    <MultiSelect width={"100%"} loading placeholder="Choose Country First" className="w-full md:w-20rem" />
-                                }
-                                <Typography sx={{ color: "error.dark" }}>{errors.cities}</Typography>
-                            </Grid>
+                            <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField
+                                        id="standard-select-country"
+                                        select
+                                        label="Country Name"
+                                        defaultValue=""
+                                        variant="standard"
+                                        name="countryName"
+                                        value={newProgram.countryName ?? ""}
+                                        onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}>
+                                        {countries.map((option) => (
+                                            <MenuItem key={option.id} value={option.Name}>
+                                                {option.Name}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.countryName}</Typography>
+                                </Grid>
+                                <Grid item md={1} xs={12} width={"100%"}>
+                                </Grid>
+                                <Grid item md={5} xs={12}> <div className="card flex justify-content-center">
+                                        <MultiSelect value={newProgram.cities} onChange={handleChange} options={cities} optionLabel="Name" name='cities' display="chip"
+                                        style={{backgroundColor: "#F6F4E8"}}
+                                            placeholder="Select Cities" maxSelectedLabels={3} className="w-full md:w-20rem" />
+                                    </div> 
+                                    <Typography sx={{ color: "error.dark" }}>{errors.cities}</Typography>
+                                </Grid>
 
-                        </Grid>
-                        <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField type='date' variant='standard' name='date' value={newProgram.date} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Date" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.date}</Typography>
                             </Grid>
-                            <Grid item md={1} xs={12} width={"100%"}>
+                            <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField type='date' variant='standard' name='date' value={newProgram.date} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Date" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.date}</Typography>
+                                </Grid>
+                                <Grid item md={1} xs={12} width={"100%"}>
+                                </Grid>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField
+                                        id="standard-select-transportation"
+                                        select
+                                        label="Transportation Type"
+                                        defaultValue=""
+                                        variant="standard"
+                                        name="transportationType"
+                                        value={newProgram.transportationType ?? ""}
+                                        onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}>
+                                        {transportations.map((option) => (
+                                            <MenuItem key={option.Id} value={option.Name}>
+                                                {option.Name}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.transportationType}</Typography>
+                                </Grid>
                             </Grid>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField
-                                    id="standard-select-transportation"
-                                    select
-                                    label="Transportation Type"
-                                    defaultValue=""
-                                    variant="standard"
-                                    name="transportationType"
-                                    value={newProgram.transportationType??""}
-                                    onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}>
-                                    {transportations.map((option) => (
-                                        <MenuItem key={option.Id} value={option.Name}>
-                                            {option.Name}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.transportationType}</Typography>
+                            <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField variant='standard' type='number' name='duration' value={newProgram.duration} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Duration" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.duration}</Typography>
+                                </Grid>
+                                <Grid item md={1} xs={12} width={"100%"}>
+                                </Grid>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField variant='standard' type='number' name='budget' value={newProgram.budget} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Budget" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.budget}</Typography>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField variant='standard' type='number' name='duration' value={newProgram.duration} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Duration" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.duration}</Typography>
+                            <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField variant='standard' name='image' value={newProgram.image} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Image URL" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.image}</Typography>
+                                </Grid>
+                                <Grid item md={1} xs={12} width={"100%"}>
+                                </Grid>
+                                <Grid item md={5} xs={12} width={"100%"}>
+                                    <TextField variant='standard' type='number' name='discount' value={newProgram.discount} onChange={handleChange}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        label="Discount" sx={{
+                                            width: "100%",
+                                            "& .MuiInput-root": {
+                                                "&:before": { borderColor: "black" },
+                                                "&:after": { borderColor: "black" }
+                                            },
+                                            "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
+                                        }}></TextField>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.discount}</Typography>
+                                </Grid>
                             </Grid>
-                            <Grid item md={1} xs={12} width={"100%"}>
+                            <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
+                                <Grid item xs={12} width={"100%"} mx={10}>
+                                    <div className="card flex justify-content-center">
+                                        <MultiSelect value={newProgram.habitations} onChange={handleChange} options={habitations} optionLabel="name" optionValue='id' name='habitations' display="chip"
+                                        style={{backgroundColor: "#F6F4E8"}}
+                                            placeholder="Select Habitations" maxSelectedLabels={5} className="w-full md:w-20rem" />
+                                    </div>
+                                    <Typography sx={{ color: "error.dark" }}>{errors.habitations}</Typography>
+                                </Grid>
                             </Grid>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField variant='standard' type='number' name='budget' value={newProgram.budget} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Budget" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.budget}</Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField variant='standard' name='image' value={newProgram.image} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Image URL" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.image}</Typography>
-                            </Grid>
-                            <Grid item md={1} xs={12} width={"100%"}>
-                            </Grid>
-                            <Grid item md={5} xs={12} width={"100%"}>
-                                <TextField variant='standard' type='number' name='discount' value={newProgram.discount} onChange={handleChange}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    label="Discount" sx={{
-                                        width: "100%",
-                                        "& .MuiInput-root": {
-                                            "&:before": { borderColor: "black" },
-                                            "&:after": { borderColor: "black" }
-                                        },
-                                        "& .MuiInputLabel-standard": { "&.Mui-focused": { color: "black" } }
-                                    }}></TextField>
-                                <Typography sx={{ color: "error.dark" }}>{errors.discount}</Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
-                            <Grid item xs={12} width={"100%"} mx={10}>
-                                <div className="card flex justify-content-center">
-                                    <MultiSelect value={newProgram.habitations} onChange={handleChange} options={habitations} optionLabel="name" optionValue='id' name='habitations' display="chip"
-                                        placeholder="Select Habitations" maxSelectedLabels={5} className="w-full md:w-20rem" />
-                                </div>
-                                <Typography sx={{ color: "error.dark" }}>{errors.habitations}</Typography>
-                            </Grid>
-                        </Grid>
-                        <button className={classes.button} onClick={handleClick} style={{ marginTop: "30px", width: "30%", height: "10%", fontSize: "20px" }}>Add</button>
-                    </Stack>
-                </Box>
+                            <button className={classes.button} onClick={handleClick} style={{ marginTop: "30px", width: "30%", height: "10%", fontSize: "20px" }}>Update</button>
+                        </Stack>
+                    </div>
+                </div>
             </div>
         );
     }
