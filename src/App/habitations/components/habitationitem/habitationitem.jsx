@@ -1,7 +1,11 @@
 import React from 'react';
 import "./habitationitem.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Habitationitem = ({item}) => {
+    const router =useNavigate()
+    const handleClick=()=>{
+        router(`/programs/${item.id}`)
+    }
     console.log(item)
     return (
         <div className='d-flex flex-column align-items-center'>
@@ -17,10 +21,9 @@ const Habitationitem = ({item}) => {
         </figure>
       
     </div>
-    <Link to={`/programs/${item.id}`} className='btn btn-dark w-50'>
-
-    <div >Programs</div>
-    </Link>
+    <button onClick={handleClick} className='button'>
+        <span className='span'>Programs</span>
+    </button>
     </div>
     );
 }

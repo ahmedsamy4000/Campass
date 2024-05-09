@@ -20,9 +20,9 @@ const HabitationsPage = () => {
     return (
       <div className='w-100 d-flex flex-column' id="habitationsPage">
         <CoverItem item={habitations[0]}></CoverItem>
-        <div className='w-100 d-flex' id="firstitem">
+        <div className='w-100 d-flex mt-4 mb-4 p-5' id="firstitem">
           <img id="image" src={habitations[1].image} />
-          <div className='w-100 m-0' id="info">
+          <div className='w-100 m-3' id="info">
             <label id="itemlabel">{habitations[1].name}</label>
             <h6>{habitations[1].description}</h6>
             <div className='w-100 d-flex align-items-start'>
@@ -46,15 +46,15 @@ const HabitationsPage = () => {
 
           </div>
         </div>
-        <Grid container spacing={2}>
-{habitations.map((item,index) =>
-<Grow in={true} timeout={350*index} key={item.id}>
-  <Grid xs={4}>
-<Habitationitem item={item}></Habitationitem>
-</Grid>
-</Grow> 
-)}
-</Grid>
+        <Grid container spacing={2} sx={{padding:"40px"}}>
+          {habitations.map((item, index) =>
+            <Grow in={true} timeout={350 * index} key={item.id}>
+              <Grid xs={4}>
+                <Habitationitem item={item}></Habitationitem>
+              </Grid>
+            </Grow>
+          )}
+        </Grid>
 
       </div>
     );

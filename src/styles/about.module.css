@@ -1,5 +1,5 @@
 .background {
-    height: 30vh;
+    height: 50vh;
     background-image: url("/public/about.jpg");
     background-size: cover;
     background-position: 25% 75%;
@@ -27,7 +27,7 @@
     }
 
     .caption {
-        width: 200px;
+        width: 300px;
     }
 
     .header {
@@ -42,7 +42,7 @@
     }
 
     .caption {
-        width: 300px;
+        width: 400px;
     }
 
     .header {

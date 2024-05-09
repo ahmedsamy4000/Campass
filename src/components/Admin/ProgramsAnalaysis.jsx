@@ -52,8 +52,10 @@ const ProgramsAnalaysis = () => {
 
     if (programs.length === 0) return <SimpleBackdrop></SimpleBackdrop>
     else {
-        return (
+        return (<div>
+                <img src="https://res2.weblium.site/res/5dc02e35769ac4002109a58b/5dc03e56b2d7cf0022c5e3a1_optimized_1396.webp" alt='Background' style={{width:"100%",height:"500px"}}></img>
             <div style={{backgroundColor:"#F6F5F2", width:"100%", height:"100vh"}}>
+
                 <div className='d-flex justify-content-evenly gap-3' >
                     <div className='mt-3'>
                         <ProgramsNoCard data={programs} text={'Programs Number'}></ProgramsNoCard>
@@ -93,6 +95,7 @@ const ProgramsAnalaysis = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

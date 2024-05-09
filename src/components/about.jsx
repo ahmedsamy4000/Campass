@@ -13,9 +13,9 @@ const About = () => {
     return (
         <div>
             <div className={classes.background}>
-                <div className={classes.header} style={{ marginBottom: "50px" }}>
-                    <Stack direction={"row"} justifyContent={"space-between"} className={classes.content} alignItems={"center"}>
-                        <Typography variant='h3' sx={{ fontWeight: "700" }}>About Us</Typography>
+                <div className={classes.header} style={{ marginBottom: "20px" }}>
+                    <Stack direction={"row"}  className={classes.content} flexDirection={"column"}>
+                        <Typography variant='h3' sx={{ fontWeight: "700",marginTop:"140px" }}>About Us</Typography>
                         <Typography variant='body1' sx={{ fontSize: "18px" }} className={classes.caption}>Welcome to your home away from home</Typography>
                     </Stack>
                 </div>

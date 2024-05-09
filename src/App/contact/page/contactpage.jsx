@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFeedBackAction, feedBacksAction } from '../../../redux/slices/FeedbacksSlice';
 import SimpleBackdrop from '../../../components/spinner';
 import "../page/contactpage.css";
-import { Form } from 'react-bootstrap/esm';
 import {v4 as uuid} from "uuid";
 
 
@@ -56,9 +55,10 @@ const Contactpage = () => {
                         <label htmlFor="exampleFormControlTextarea1" className="form-label">Your Openions</label>
                         <textarea className="form-control" id="exampleFormControlTextarea1"  rows={7} value={message} onChange={handleChange}/>
                     </div>
-                    <div className='d-flex align-items-start p-5'>
-                    <div className='w-75 btn btn-light m-auto' type="button" onClick={senFeedback}>Send</div>
-                    </div>
+                    
+                    <button onClick={senFeedback} className='button'>
+                        <span className='span'>Send</span>
+                    </button>
                    
                 </div>
 
