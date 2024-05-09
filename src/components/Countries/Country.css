@@ -1,10 +1,8 @@
-
-
 .Container {
     backdrop-filter: blur(16px) saturate(180%);
-    margin-bottom: 15px;
+    margin-bottom: 40px;
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(12, 37, 84, 0.25);
+    background-color: #F6F4E8;
     border-radius: 12px;
     padding: 38px;  
     filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
@@ -13,6 +11,7 @@
     align-items: center;
     justify-content:center;
     text-align: center;
+    box-shadow: #A79277 0px 20px 30px -10px;
     
   }
   
@@ -39,7 +38,21 @@
 
     
   }
-  
+  .title{
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    position:absolute;
+    color:white;
+    font-size:90pt;
+    margin-top :17%;
+    margin-left:58%;
+}
+.coverImg{  
+    height:500px;
+    width:100%;
+    
+}
   
 /*   
   h1{

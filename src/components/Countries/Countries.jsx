@@ -25,6 +25,8 @@ const Countries = () => {
 
   return (
     <div className='w-100'>
+        <img className='coverImg' src='//res2.weblium.site/res/5dc02e35769ac4002109a58b/5dc18ac331a15200214b8dad?nowebp' alt='Backgroung'></img>
+
     <div className="container" style={{paddingTop:'100px'}}>
       <div className="col text-center"> 
         <h2>Let's explore the Countries</h2> 
