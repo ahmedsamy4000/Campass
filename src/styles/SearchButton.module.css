@@ -1,3 +1,6 @@
+
+
+
 .InputContainer {
     margin-left: 30px;
     width: 210px;
@@ -29,4 +32,22 @@
   /* SearchButton.module.css */
 .input::placeholder {
   color: white; /* Placeholder color */
+}
+.button {
+  margin-top: 8px;
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #7C782F;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
 }

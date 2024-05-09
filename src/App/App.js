@@ -55,6 +55,7 @@ function App() {
         { path: "/feedbacks", element: <Feedback></Feedback> },
         { path: "/countries", element: <Countries></Countries> },
         { path: "/countries/:countryId", element: <Cities></Cities> },
+        { path: "/search/:search", element: <Countries></Countries> },
         {path:"/Countries/:countryId/:cityName/programs", element: <Programs></Programs>},
         { path: "/company/programs", element: <CompanyPage></CompanyPage>, errorElement: <NotFound></NotFound> },
         { path: "/company/programs/add", element: <AddProgram></AddProgram> },

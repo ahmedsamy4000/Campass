@@ -29,13 +29,13 @@ const Header = () => {
             <Grid container sx={{ display: 'flex', alignItems: 'center', borderBottom: '1px', padding: '10px'}}>
                 <Grid item md={4} display={"flex"} marginTop={"10px"}>
                     <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        <img src="Compass.gif" alt="Logo" style={{ width: '50px', height: 'auto', marginRight: '10px', borderRadius: '50%' }} />
+                        <img src="Compass.gif" alt="Logo" style={{ width: '80px', height: 'auto', marginRight: '20px', borderRadius: '50%' }} />
                         <span className={ClassNames.txt}>CAMPASS</span>
                     </Link>
                     <SearchButton></SearchButton>
                 </Grid>
                 <Grid item md={8} display={"flex"} justifyContent={"end"}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ marginLeft: "100px", "& .MuiTabs-indicator": { backgroundColor: '#DFD0B8' } }} >
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ marginLeft: "50px", "& .MuiTabs-indicator": { backgroundColor: '#DFD0B8' } }} >
                     {(isAuth&&type==="Company")?<Tab label="Programs" component={Link} to="/company/programs" sx={{ color: "white", '&.Mui-selected': { color: '#DFD0B8' }}} />
                     :<Tab label="Programs" component={Link} to="/programs" sx={{ color: "white", '&.Mui-selected': { color: '#DFD0B8' }}} />
                     }
