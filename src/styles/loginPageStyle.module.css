@@ -1,6 +1,6 @@
 .background {
     height: 100vh;
-    /* background-image: url("../../public/Login2.jpg"); */
+    background-image: url("../../public/Login2.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
