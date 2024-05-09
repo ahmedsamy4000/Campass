@@ -23,7 +23,9 @@ const Intro = () => {
             </Grid>
             <Grid item md={12} display="flex" justifyContent={"center"}>
             <Typography variant="h6" component="h2" className={homeClass.txt}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vero sint consequatur, enim, mollitia inventore temporibus error animi provident, consequuntur accusamus tenetur ratione nihil! Possimus ducimus voluptatibus inventore ipsum sed.
+            Embark on your next adventure and discover the joy of camping with our expertly curated experiences! 
+            Explore the great outdoors, create lasting memories, and experience the beauty of nature firsthand. 
+            From tranquil hikes to starlit nights, immerse yourself in the wonders of the wilderness.
             </Typography>
 
             </Grid>
