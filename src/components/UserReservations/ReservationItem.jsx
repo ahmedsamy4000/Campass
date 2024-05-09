@@ -11,7 +11,7 @@ const ReservationItem = (props) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(programActionByID(programId))
-    }, [dispatch])
+    }, [dispatch, programId])
 
     const handleClick = () => {
         const confirmed = window.confirm("Do you want to cancel?");

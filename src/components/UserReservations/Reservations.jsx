@@ -5,15 +5,14 @@ import { Grid } from '@mui/material';
 import ReservationItem from './ReservationItem';
 import EmptyReservation from './EmptyReservation';
 
-const Reservations = (props) => {
-    const {id}=props
+const Reservations = () => {
     const reservations = useSelector((state) => state.reservations.userReservations);
     const dispatch = useDispatch();
     useEffect(() => {
-        if(id){
-            dispatch(GetUserReservation(id))
+        if(localStorage.getItem('email')){
+            dispatch(GetUserReservation(localStorage.getItem('email')))
         }
-    }, [dispatch,id])
+    }, [dispatch])
     if(!reservations) return <EmptyReservation></EmptyReservation>
     return (
         <Grid container>

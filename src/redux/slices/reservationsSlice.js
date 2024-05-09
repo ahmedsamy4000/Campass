@@ -8,13 +8,15 @@ export const reservationsAction=createAsyncThunk("reservations/getAll",async ()=
 })
 
 export const addreservationAction=createAsyncThunk("reservations/add",async (reservation)=>{
+    console.log("here");
     const res=await axios.post("https://campass-json-server.onrender.com/reservations",reservation); 
+    console.log("res", res);
     const data=res.data;
     return data;
 });
-export const GetUserReservation = createAsyncThunk("get/userReservation", async(ID)=>{
+export const GetUserReservation = createAsyncThunk("get/userReservation", async(email)=>{
     const reservations = await axios.get("https://campass-json-server.onrender.com/reservations");
-    const reservation = await reservations.data.filter(r => r.userId === ID);
+    const reservation = await reservations.data.filter(r => r.email === email);
     return reservation;
 })
 export const DeleteReservation = createAsyncThunk("delete/reservation", async(ID)=>{
