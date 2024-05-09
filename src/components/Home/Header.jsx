@@ -39,6 +39,8 @@ const Header = () => {
                     {(isAuth&&type==="Company")?<Tab label="Programs" component={Link} to="/company/programs" sx={{ color: "white", '&.Mui-selected': { color: '#DFD0B8' }}} />
                     :<Tab label="Programs" component={Link} to="/programs" sx={{ color: "white", '&.Mui-selected': { color: '#DFD0B8' }}} />
                     }
+                    {isAuth&&type==="Admin"&&<Tab label="Analysis" component={Link} to="/analysis" sx={{ color: "white", '&.Mui-selected': { color: '#DFD0B8' }}} />
+                    }
                     {(!isAuth||type==="Company"||type==="Traveller")&&
                     <Tab label="Countries" component={Link} to="/countries" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' } }} />
                     }
