@@ -51,6 +51,8 @@ const Header = () => {
                     <Tab label="About" component={Link} to="/about" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' }}} />
                     {isAuth&&type==="Admin"&&<Tab label="FeedBacks" component={Link} to="/feedbacks" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' } }} />
                     }
+                    {isAuth&&type==="Admin"&&<Tab label="Analysis" component={Link} to="/analysis" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' } }} />
+                    }
                     {isAuth&&type==="Traveller"&&<Tab label="Reservations" component={Link} to="/userReservations" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' }}} />
                     }
                     {isAuth&&type==="Company"&&<Tab label="Reservations" component={Link} to="/reservations" sx={{ color: 'white', '&.Mui-selected': { color: '#DFD0B8' } }} />
