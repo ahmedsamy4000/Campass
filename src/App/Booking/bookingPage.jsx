@@ -30,7 +30,7 @@ const BookingPage = () => {
             userId: "3",
             event: {},
             date: new Date(Date.now()).toLocaleString(),
-            totalPrice: program.budget * passengersnum
+            totalPrice: totalPrice
         }));
         setpassengersnum(0);
     }
@@ -72,6 +72,7 @@ const BookingPage = () => {
                 },
             })).then((key)=>{
                 navigateToPaymentPage(key.payload);
+                addReservation();
             })
             
         }
