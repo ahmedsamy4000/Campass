@@ -196,9 +196,10 @@ const UpdateProgram = () => {
                                 <Grid item md={1} xs={12} width={"100%"}>
                                 </Grid>
                                 <Grid item md={5} xs={12}> <div className="card flex justify-content-center">
-                                        <MultiSelect value={newProgram.cities} onChange={handleChange} options={cities} optionLabel="Name" name='cities' display="chip"
+                                        <MultiSelect value={newProgram.cities?.length === 0 ? "" : newProgram.cities} onChange={handleChange} options={cities} optionLabel='Name' name='cities' display="chip"
                                         style={{backgroundColor: "#F6F4E8"}}
-                                            placeholder="Select Cities" maxSelectedLabels={3} className="w-full md:w-20rem" />
+                                            placeholder="Select Cities" maxSelectedLabels={5} className="w-full md:w-20rem" />
+
                                     </div> 
                                     <Typography sx={{ color: "error.dark" }}>{errors.cities}</Typography>
                                 </Grid>
@@ -323,7 +324,7 @@ const UpdateProgram = () => {
                             <Grid container width={"80%"} justifyContent={"center"} spacing={{ xs: 1, md: 0 }}>
                                 <Grid item xs={12} width={"100%"} mx={10}>
                                     <div className="card flex justify-content-center">
-                                        <MultiSelect value={newProgram.habitations} onChange={handleChange} options={habitations} optionLabel="name" optionValue='id' name='habitations' display="chip"
+                                        <MultiSelect key={"id"} value={newProgram.habitations?.length === 0 ? "" : newProgram.habitations} onChange={handleChange} options={habitations} optionLabel="name" optionValue='id' name='habitations' display="chip"
                                         style={{backgroundColor: "#F6F4E8"}}
                                             placeholder="Select Habitations" maxSelectedLabels={5} className="w-full md:w-20rem" />
                                     </div>

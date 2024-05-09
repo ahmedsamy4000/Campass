@@ -40,9 +40,9 @@ const CompanyProgram = ({ programName, description, image, id, handleOpen }) => 
                             {description}
                         </p>
                         <Stack direction={"row"} justifyContent={"space-between"}>
-                            <Link to={`/reservations/${id}`} className={classes.button}>
+                            {/* <Link to={`/reservations/${id}`} className={classes.button}>
                                 Reservations
-                            </Link>
+                            </Link> */}
                             <Link to={`/company/programs/${id}`} className={classes.button}>
                                 Update
                             </Link>

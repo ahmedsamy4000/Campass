@@ -61,7 +61,7 @@ function App() {
         { path: "/company/programs/add", element: <AddProgram></AddProgram> },
         { path: "/company/programs/:id", element: <UpdateProgram></UpdateProgram> },
         { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
-        { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
+        { path: "/reservations/:id", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
         { path: "/userReservations", element: <UserReservations></UserReservations>, errorElement: <NotFound></NotFound> },
         { path: "/acceptprogram", element: <ManagePrograms/> },
         { path: "/analysis", element: <ProgramsAnalysisPage></ProgramsAnalysisPage> },

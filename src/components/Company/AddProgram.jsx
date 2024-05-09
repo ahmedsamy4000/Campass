@@ -179,7 +179,7 @@ const AddProgram = () => {
                             </Grid>
                             <Grid item md={5} xs={12}>
                                 {program.countryName ? <div className="card flex justify-content-center">
-                                    <MultiSelect value={program.cities} onChange={handleChange} options={cities} optionLabel="Name" name='cities' optionValue='Name' display="chip"
+                                    <MultiSelect value={program.cities} onChange={handleChange} options={cities} optionLabel="Name" name='cities' display="chip"
                                         placeholder="Select Cities" maxSelectedLabels={3} className="w-full md:w-20rem" style={{ backgroundColor: "#F6F4E8" }} />
                                 </div> :
                                     <MultiSelect style={{ backgroundColor: "#F6F4E8" }} width={"100%"} loading placeholder="Choose Country First" className="w-full md:w-20rem" />
