@@ -14,3 +14,28 @@
     height: 100vh;
     padding: 20px;
 }
+.con{
+    width:90%;
+    height: 200px;
+    box-shadow: #A79277 0px 20px 30px -10px;
+    margin: 50px;
+    background-color: #F6F4E8;
+    border-radius: 30px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto+Slab:wght@100..900&display=swap');
+.title{
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    position:absolute;
+    color:white;
+    font-size:50pt;
+    margin-top :80px;
+    margin-left: 10%;
+}
+.coverImg{  
+    height:350px;
+    width:100%;
+}
