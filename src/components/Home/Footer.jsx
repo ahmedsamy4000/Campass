@@ -7,7 +7,7 @@ const Footer = () => {
         <>
             <div className={classes.scallopup}></div>
             <div className={classes.colourblock}>
-                <h1>Scallop Pointing Up.</h1>
+                <h1>Campass</h1>
                 <p><Link to='/programs'>Programs</Link></p>
                 <p><Link to='/countries'>Countries</Link></p>
                 <p><Link to='/company/programs'>Campany</Link></p>

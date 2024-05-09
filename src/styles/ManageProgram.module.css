@@ -1,6 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto+Slab:wght@100..900&display=swap');
+.title{
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    position:absolute;
+    color:white;
+    font-size:50pt;
+    margin-top :80px;
+    margin-left: 10%;
+}
+.coverImg{  
+    height:450px;
+    width:100%;
+}
+
+.con{
+  width:90%;
+  height: 450px;
+  box-shadow: #A79277 0px 20px 30px -10px;
+  margin: 50px;
+  background-color: #F6F4E8;
+  border-radius: 30px;
+}
 
 /*/////////////////////////////////////////////////////////////////////////////*/
-button {
+.button {
   display: inline-block;
   border-radius: 4px;
   background-color: #7C782F;
@@ -15,14 +40,14 @@ button {
   margin: 30px;
  }
  
- button span {
+ .button .span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
  }
  
- button span:after {
+ .button .span:after {
   content: '»';
   position: absolute;
   opacity: 0;
@@ -31,11 +56,11 @@ button {
   transition: 0.5s;
  }
  
- button:hover span {
+ .button:hover .span {
   padding-right: 15px;
  }
  
- button:hover span:after {
+ .button:hover .span:after {
   opacity: 1;
   right: 0;
  } 
