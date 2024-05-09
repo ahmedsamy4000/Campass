@@ -196,9 +196,9 @@ const UpdateProgram = () => {
                                 <Grid item md={1} xs={12} width={"100%"}>
                                 </Grid>
                                 <Grid item md={5} xs={12}> <div className="card flex justify-content-center">
-                                        <MultiSelect value={newProgram.cities?.length === 0 ? "" : newProgram.cities} onChange={handleChange} options={cities} optionLabel='Name' name='cities' display="chip"
+                                        {/* <MultiSelect value={newProgram.cities?? ""} onChange={handleChange} options={cities} optionLabel='Name' name='cities' display="chip"
                                         style={{backgroundColor: "#F6F4E8"}}
-                                            placeholder="Select Cities" maxSelectedLabels={5} className="w-full md:w-20rem" />
+                                            placeholder="Select Cities" maxSelectedLabels={5} className="w-full md:w-20rem" /> */}
 
                                     </div> 
                                     <Typography sx={{ color: "error.dark" }}>{errors.cities}</Typography>

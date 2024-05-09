@@ -31,7 +31,7 @@ const CompanyPrograms = () => {
     },[dispatch]);
 
     useEffect(() => {
-        setProgams(data.filter(p => p.companyID === user.id && p.isPending === true));
+        setProgams(data.filter(p => p.companyID === user.id && p.isPending === false));
     }, [data, user]);
     const handleAddClick = () => navigate('/company/programs/add');
 

@@ -16,7 +16,7 @@ const Reservation = (props) => {
     if (user) {
         return (
             <div style={{ backgroundColor: 'black' , height: "200px", width: "100px"}}>
-                {console.log(user.fName)}
+                {console.log('hellllo')}
                 <Box sx={{ display: 'flex', width: "100%", justifyContent: "space-between", alignItems: "center" }}>
                     <div style={{ display: "flex", flexDirection: "row", padding: "20px", alignItems: "center" }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', marginLeft: '40px' }}>
