@@ -11,6 +11,7 @@
     cursor: pointer;
     border: 2px solid white;
     color: white;
+    margin-top: 8px;
   }
   
   .input {

@@ -23,8 +23,8 @@ const Experience = () => {
                     <Typography variant="p" component="h2" style={{ fontSize: "16pt", margin: "20px", color: "gray" }}>
                         Whether you're seeking a romantic getaway, a family adventure, or a solo escape, Hidden Heaven promises an unforgettable stay for every visitor. From cozy tents to charming cabins, our accommodations are thoughtfully designed to provide a tranquil haven amidst the breathtaking wilderness.
                     </Typography>
-                    <button onClick={handleClick}>
-                        <span>Book</span>
+                    <button onClick={handleClick} className={homeClass.button}>
+                        <span className={homeClass.span}>Book</span>
                     </button>
                 </div>
             </Grid>

@@ -35,7 +35,7 @@
 }
 
 .footer {
-    background-image: url('../../public/istockphoto-637325398-612x612.jpg');
+    background-image: url('https://res2.weblium.site/res/65a4dd651ae638000e4a167b/65c4deca427eec000fd108d7_optimized_1395_c1395x931-0x0.webp');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -43,7 +43,7 @@
     z-index: 1;
     color: #fff;
     text-align: center;
-    height: 500px;
+    height: 650px;
     width:100%
 }
 .footer:before {
@@ -98,7 +98,7 @@ main .row:after {
     border-radius: 20px;
 }
 
-button {
+.button {
     display: inline-block;
     border-radius: 4px;
     background-color: #7C782F;
@@ -113,14 +113,14 @@ button {
     margin: 20px;
    }
    
-   button span {
+   .button .span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
    }
    
-   button span:after {
+   .button .span:after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -129,11 +129,11 @@ button {
     transition: 0.5s;
    }
    
-   button:hover span {
+   .button:hover .span {
     padding-right: 15px;
    }
    
-   button:hover span:after {
+   .button:hover .span:after {
     opacity: 1;
     right: 0;
    }  

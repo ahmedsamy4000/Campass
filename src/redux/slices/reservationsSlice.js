@@ -12,10 +12,17 @@ export const addreservationAction=createAsyncThunk("reservations/add",async (res
     const data=res.data;
     return data;
 });
-
+export const GetUserReservation = createAsyncThunk("get/userReservation", async(ID)=>{
+    const reservations = await axios.get("http://localhost:8000/reservations");
+    const reservation = await reservations.data.filter(r => r.userId === ID);
+    return reservation;
+})
+export const DeleteReservation = createAsyncThunk("delete/reservation", async(ID)=>{
+    await axios.delete("http://localhost:8000/reservations/"+ID);
+})
 const reservationsSlice=createSlice({
     name:"reservations",
-    initialState:{reservations:[],loading:false},
+    initialState:{reservations:[],loading:false,userReservations:[]},
     extraReducers:(builder)=>{
         ///////////////////////////////GET///////////////////////
         builder.addCase(reservationsAction.fulfilled,(state,action)=>{
@@ -45,6 +52,9 @@ const reservationsSlice=createSlice({
             state.loading=false;
           
         })
+        builder.addCase(GetUserReservation.fulfilled, (state, action)=>{
+            state.userReservations = action.payload;
+        });
     } 
 });
 

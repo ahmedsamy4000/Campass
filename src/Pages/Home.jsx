@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Intro from '../components/Home/intro';
 import { Grid } from '@mui/material';
 import RecentlyPrograms from '../components/Home/RecentlyPrograms';
-import { useDispatch, useSelector } from 'react-redux';
-import { authRequestAction, orderRequestAction, paymentKeyRequestAction, paymentMethoAction } from '../redux/slices/paymentSlice';
 import Experience from '../components/Home/Experience';
-import Countries from '../components/Countries/Countries';
 import { CountriesHome } from '../components/Home/Countries';
 import PriceList from '../components/Home/PriceList';
 

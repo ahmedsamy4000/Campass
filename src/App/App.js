@@ -34,7 +34,7 @@ const Countries = lazy(() => import('../components/Countries/Countries.jsx'));
 const ReservationsPage = lazy(() => import('../Pages/ReservationsPage.jsx'));
 const AddProgram = lazy(() => import('../components/Company/AddProgram.jsx'));
 const UpdateProgram = lazy(() => import('../components/Company/UpdateProgram.jsx'));
-
+const UserReservations = lazy(() => import('../Pages/UserReservations.jsx'));
 const NotFound = lazy(() => import('../Pages/NotFound.jsx'))
 const Error = lazy(() => import('../Pages/Error.jsx'))
 
@@ -61,6 +61,7 @@ function App() {
         { path: "/company/programs/:id", element: <UpdateProgram></UpdateProgram> },
         { path: "/about", element: <AboutUs></AboutUs>, errorElement: <NotFound></NotFound> },
         { path: "/reservations", element: <ReservationsPage></ReservationsPage>, errorElement: <NotFound></NotFound> },
+        { path: "/userReservations", element: <UserReservations></UserReservations>, errorElement: <NotFound></NotFound> },
         { path: "/acceptprogram", element: <ManagePrograms/> },
       ]
     },
