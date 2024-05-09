@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import classes from '../../Styles/loginPageStyle.module.css'
+import classes from '../../Styles/loginRegister.module.css'
 import { Box, FormControl, IconButton, Input, InputAdornment, InputLabel, TextField, Typography } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
